@@ -1,0 +1,3 @@
+"""
+Store package initialization
+"""
