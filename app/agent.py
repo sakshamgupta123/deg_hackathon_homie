@@ -1,13 +1,57 @@
-from typing import Dict, Optional
+from typing import Dict
+import json
+import os
+import logging
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
-from app.beckn_apis.connection_apis import search, select, init, confirm, status
 from app.prompt_book.connection_agent_prompt import CONNECTION_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
 from app.beckn_apis.connection import BAPConnectionClient
 
+
+# Configure simple progress logger
+progress_logger = logging.getLogger('progress')
+progress_logger.setLevel(logging.INFO)
+
+# Create logs directory if it doesn't exist
+os.makedirs('logs', exist_ok=True)
+
+# Create file handler for progress logs
+progress_handler = logging.FileHandler('logs/progress.log')
+progress_handler.setLevel(logging.INFO)
+
+# Create simple formatter
+formatter = logging.Formatter('%(asctime)s - %(message)s')
+progress_handler.setFormatter(formatter)
+
+# Add handler to logger
+progress_logger.addHandler(progress_handler)
+
 connection_client = BAPConnectionClient()
+
+
+def _save_context_store(step: str):
+    """
+    Save the current state of context store to a file
+
+    Args:
+        step: The step name (search/select/init/confirm/status)
+    """
+    os.makedirs('context_store_history', exist_ok=True)
+    filename = f'context_store_history/context_store_{step}.json'
+
+    # Get the current state
+    state = {
+        'connection_details': context_store.get_connection_details(),
+        'user_details': context_store.get_user_details(),
+        'transaction_history': context_store.get_transaction_history()
+    }
+
+    # Save to file
+    with open(filename, 'w') as f:
+        json.dump(state, f, indent=2)
+
 
 def _handle_search() -> Dict:
     """
@@ -17,16 +61,16 @@ def _handle_search() -> Dict:
         location: Location to search in
         connection_type: Type of connection (Residential/Commercial)
     """
+    progress_logger.info("Step 1/5: Search")
 
     # Update context with search parameters
-    context_store.update_connection_details(
-    )
-    context_store.update_user_details(
-    )
+    context_store.update_connection_details()
+    context_store.update_user_details()
 
     response = connection_client.search_connection()
     context_store.add_transaction_history('search', response)
-    return response.json()
+    _save_context_store('search')
+    return response
 
 
 def _handle_select(provider_id: str, item_id: str) -> Dict:
@@ -38,6 +82,8 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         item_id: ID of the selected plan
         connection_type: Optional connection type (will use from context if not provided)
     """
+    progress_logger.info("Step 2/5: Select")
+
     if not context_store.get_transaction_history().get('search'):
         raise Exception('Search must be performed before selection')
 
@@ -50,36 +96,54 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         item_id=item_id
     )
 
-    response = connection_client.select_connection(provider_id=provider_id, item_id=item_id)
+    response = connection_client.select_connection(
+        provider_id=provider_id,
+        item_id=item_id
+    )
     context_store.add_transaction_history('select', response)
+    _save_context_store('select')
     return response
 
 
 def _handle_init(provider_id: str, item_id: str) -> Dict:
     """
     Initialize connection request with customer details
-
     """
+    progress_logger.info("Step 3/5: Initialize")
+
     if not context_store.get_transaction_history().get('select'):
         raise Exception('Selection must be made before initialization')
 
     init_data = {
         'provider_id': provider_id,
-        'item_id': item_id      
+        'item_id': item_id
     }
 
     # Update user details in context
     context_store.update_user_details(**init_data)
 
-    response = connection_client.init_connection(provider_id=provider_id, item_id=item_id) 
+    response = connection_client.init_connection(
+        provider_id=provider_id,
+        item_id=item_id
+    )
     context_store.add_transaction_history('init', response)
+    _save_context_store('init')
     return response
 
 
-def _handle_confirm(provider_id: str, item_id: str, fulfillment_id: str, customer_name: str, customer_phone: str, customer_email: str) -> Dict:
+def _handle_confirm(
+    provider_id: str,
+    item_id: str,
+    fulfillment_id: str,
+    customer_name: str,
+    customer_phone: str,
+    customer_email: str
+) -> Dict:
     """
     Confirm connection request with payment details
     """
+    progress_logger.info("Step 4/5: Confirm")
+
     if not context_store.get_transaction_history().get('init'):
         raise Exception('Initialization must be done before confirmation')
 
@@ -92,8 +156,16 @@ def _handle_confirm(provider_id: str, item_id: str, fulfillment_id: str, custome
         customer_email=customer_email
     )
 
-    response = connection_client.confirm_connection(provider_id=provider_id, item_id=item_id, fulfillment_id=fulfillment_id, customer_name=customer_name, customer_phone=customer_phone, customer_email=customer_email)
+    response = connection_client.confirm_connection(
+        provider_id=provider_id,
+        item_id=item_id,
+        fulfillment_id=fulfillment_id,
+        customer_name=customer_name,
+        customer_phone=customer_phone,
+        customer_email=customer_email
+    )
     context_store.add_transaction_history('confirm', response)
+    _save_context_store('confirm')
     return response
 
 
@@ -104,6 +176,8 @@ def _handle_status(order_id: str) -> Dict:
     Args:
         transaction_id: Optional transaction ID (will use from context if not provided)
     """
+    progress_logger.info("Step 5/5: Status Check")
+
     if not context_store.get_transaction_history().get('confirm'):
         raise Exception('Confirmation must be done before status check')
 
@@ -112,9 +186,8 @@ def _handle_status(order_id: str) -> Dict:
     )
     response = connection_client.status_connection(order_id=order_id)
     context_store.add_transaction_history('status', response)
+    _save_context_store('status')
     return response
-
-
 
 
 context_store = ContextStore()
