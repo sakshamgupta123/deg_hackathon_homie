@@ -1,14 +1,13 @@
-import os
-import time
-import uuid
-from typing import Dict, Any, Optional
-
+from typing import Dict, Any, Optional, Union
 import requests
+import uuid
+import time
 
 
-class BAPConnectionClient:
+class SubsidyClient:
     """
-    A client for interacting with Beckn Protocol APIs.
+    A client for interacting with subsidy-related Beckn Protocol APIs.
+    Provides methods for searching, confirming, and checking status of subsidies.
     """
     
     # Default configuration values
@@ -20,8 +19,8 @@ class BAPConnectionClient:
     DEFAULT_COUNTRY_CODE = "USA"
     DEFAULT_CITY_CODE = "NANP:628"
     DEFAULT_TIMEOUT = 100
-    DEFAULT_DOMAIN = "deg:service"
     DEFAULT_VERSION = "1.1.0"
+    DEFAULT_DOMAIN = "deg:schemes"
 
     def __init__(
         self,
@@ -34,7 +33,7 @@ class BAPConnectionClient:
         session: Optional[requests.Session] = None,
     ):
         """
-        Initialize the BAP client with configuration.
+        Initialize the subsidy client with configuration.
 
         Parameters
         ----------
@@ -65,7 +64,7 @@ class BAPConnectionClient:
 
         Parameters
         ----------
-        action         The action being performed (e.g., 'search', 'select')
+        action         The action being performed (e.g., 'search', 'confirm', 'status')
         country_code   ISO-3166 alpha-3 country code
         city_code      City code
         extra_context  Additional context fields to merge
@@ -100,75 +99,29 @@ class BAPConnectionClient:
             
         return context
 
-    def search_connection(self) -> Dict[str, Any]:
+    def search(self) -> Dict[str, Any]:
         """
-        Send a Beckn *search* request for a "Connection" service.
+        Send a Beckn *search* request for subsidies.
+
         Returns
         -------
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
         """
         url = f"{self.base_url.rstrip('/')}/search"
         
-        context = self._create_context(
-            "search",
-        )
+        context = self._create_context("search")
 
         payload = {
             "context": context,
             "message": {
                 "intent": {
-                    "item": {"descriptor": {"name": "Connection"}}
-                }
-            },
-        }
-
-        headers = {"Content-Type": "application/json"}
-        resp = self.session.post(
-            url,
-            json=payload,
-            headers=headers,
-            timeout= self.DEFAULT_TIMEOUT
-        )
-        resp.raise_for_status()
-        return resp.json()
-
-    def select_connection(
-        self,
-        provider_id: str,
-        item_id: str,
-    ) -> Dict[str, Any]:
-        """
-        Send a Beckn *select* request for a "Connection" service.
-
-        Parameters
-        ----------
-        provider_id    ID of the service provider
-        item_id        ID of the item to select
-
-        Returns
-        -------
-        Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
-        """
-        url = f"{self.base_url.rstrip('/')}/select"
-        
-        context = self._create_context(
-            "select"          
-        )
-
-        payload = {
-            "context": context,
-            "message": {
-                "order": {
-                    "provider": {
-                        "id": provider_id
-                    },
-                    "items": [
-                        {
-                            "id": item_id
+                    "item": {
+                        "descriptor": {
+                            "name": "incentive"
                         }
-                    ]
+                    }
                 }
-            },
+            }
         }
 
         headers = {"Content-Type": "application/json"}
@@ -181,56 +134,7 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def init_connection(
-        self,
-        provider_id: str,
-        item_id: str,
-    ) -> Dict[str, Any]:
-        """
-        Send a Beckn *init* request for a "Connection" service.
-
-        Parameters
-        ----------
-        provider_id    ID of the service provider
-        item_id        ID of the item to initialize
-
-        Returns
-        -------
-        Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
-        """
-        url = f"{self.base_url.rstrip('/')}/init"
-        
-        context = self._create_context(
-            "init"
-        )
-
-        payload = {
-            "context": context,
-            "message": {
-                "order": {
-                    "provider": {
-                        "id": provider_id
-                    },
-                    "items": [
-                        {
-                            "id": item_id
-                        }
-                    ]
-                }
-            },
-        }
-
-        headers = {"Content-Type": "application/json"}
-        resp = self.session.post(
-            url,
-            json=payload,
-            headers=headers,
-            timeout=self.DEFAULT_TIMEOUT
-        )
-        resp.raise_for_status()
-        return resp.json()
-
-    def confirm_connection(
+    def confirm(
         self,
         provider_id: str,
         item_id: str,
@@ -240,12 +144,12 @@ class BAPConnectionClient:
         customer_email: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *confirm* request for a "Connection" service.
+        Send a Beckn *confirm* request for a subsidy.
 
         Parameters
         ----------
-        provider_id      ID of the service provider
-        item_id          ID of the item to confirm
+        provider_id      ID of the subsidy provider
+        item_id          ID of the subsidy item
         fulfillment_id   ID of the fulfillment
         customer_name    Name of the customer
         customer_phone   Phone number of the customer
@@ -257,9 +161,7 @@ class BAPConnectionClient:
         """
         url = f"{self.base_url.rstrip('/')}/confirm"
         
-        context = self._create_context(
-            "confirm"
-        )
+        context = self._create_context("confirm")
 
         payload = {
             "context": context,
@@ -288,7 +190,7 @@ class BAPConnectionClient:
                         }
                     ]
                 }
-            },
+            }
         }
 
         headers = {"Content-Type": "application/json"}
@@ -301,16 +203,16 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def status_connection(
+    def status(
         self,
         order_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *status* request for a "Connection" service.
+        Send a Beckn *status* request for a subsidy.
 
         Parameters
         ----------
-        order_id       ID of the order to check status
+        order_id       ID of the subsidy order to check status
 
         Returns
         -------
@@ -318,15 +220,13 @@ class BAPConnectionClient:
         """
         url = f"{self.base_url.rstrip('/')}/status"
         
-        context = self._create_context(
-            "status"
-        )
+        context = self._create_context("status")
 
         payload = {
             "context": context,
             "message": {
                 "order_id": order_id
-            },
+            }
         }
 
         headers = {"Content-Type": "application/json"}
@@ -344,72 +244,38 @@ class BAPConnectionClient:
 # Example usage
 if __name__ == "__main__":
     import json
-    from datetime import datetime
     
-    # Create client with default configuration
-    client = BAPConnectionClient()
+    # Initialize client
+    client = SubsidyClient()
     
-    # Create timestamp for unique filenames
-    # timestamp = "datetime.now().strftime("%Y%m%d_%H%M%S")"
-    timestamp = "1"    
     # Example search
-    search_response = client.search_connection()
-    with open(f"search_response_{timestamp}.json", "w") as f:
+    search_response = client.search()
+    with open("subsidy_search_response.json", "w") as f:
         json.dump(search_response, f, indent=2)
     
-    # Extract provider and item IDs from search response
-    provider_id = search_response["responses"][0]["message"]["catalog"]["providers"][0]["id"]
-    item_id = search_response["responses"][0]["message"]["catalog"]["providers"][0]["items"][0]["id"]
-    
-    # Example select
-    select_response = client.select_connection(
-        provider_id=provider_id,
-        item_id=item_id,
-    )
-    with open(f"select_response_{timestamp}.json", "w") as f:
-        json.dump(select_response, f, indent=2)
-    
-    # Example init
-    init_response = client.init_connection(
-        provider_id=provider_id,
-        item_id=item_id,
-    )
-    with open(f"init_response_{timestamp}.json", "w") as f:
-        json.dump(init_response, f, indent=2)
-    
-    # Extract order ID from init response
-    order_id = init_response["responses"][0]["message"]["order"]["provider"]["id"]
-    
     # Example confirm
-    confirm_response = client.confirm_connection(
-        provider_id=provider_id,
-        item_id=item_id,
-        fulfillment_id=init_response["responses"][0]["message"]["order"]["fulfillments"][0]["id"],
-        customer_name="Saksham",
+    confirm_response = client.confirm(
+        provider_id="323",
+        item_id="459",
+        fulfillment_id="615",
+        customer_name="Lisa",
         customer_phone="876756454",
-        customer_email="Homie@mailinator.com",
+        customer_email="LisaS@mailinator.com"
     )
-    with open(f"confirm_response_{timestamp}.json", "w") as f:
+    with open("subsidy_confirm_response.json", "w") as f:
         json.dump(confirm_response, f, indent=2)
-    print(order_id)
+    
     # Example status
-    status_response = {}
-    while not status_response.get("responses") and int(timestamp) < 5:
-        timestamp = int(timestamp) + 1
-        status_response = client.status_connection(
-            order_id=order_id,
-        )
-        with open(f"status_response_{timestamp}.json", "w") as f:
-            json.dump(status_response, f, indent=2)
+    status_response = client.status(
+        order_id="3778"
+    )
+    with open("subsidy_status_response.json", "w") as f:
+        json.dump(status_response, f, indent=2)
     
     from pprint import pprint
     print("\nSearch Response:")
     pprint(search_response)
-    print("\nSelect Response:")
-    pprint(select_response)
-    print("\nInit Response:")
-    pprint(init_response)
     print("\nConfirm Response:")
     pprint(confirm_response)
     print("\nStatus Response:")
-    pprint(status_response)
+    pprint(status_response) 

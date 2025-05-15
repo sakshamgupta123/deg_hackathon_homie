@@ -6,9 +6,9 @@ from typing import Dict, Any, Optional
 import requests
 
 
-class BAPConnectionClient:
+class BAPRetailClient:
     """
-    A client for interacting with Beckn Protocol APIs.
+    A client for interacting with Beckn Protocol Retail APIs.
     """
     
     # Default configuration values
@@ -20,7 +20,7 @@ class BAPConnectionClient:
     DEFAULT_COUNTRY_CODE = "USA"
     DEFAULT_CITY_CODE = "NANP:628"
     DEFAULT_TIMEOUT = 100
-    DEFAULT_DOMAIN = "deg:service"
+    DEFAULT_DOMAIN = "deg:retail"
     DEFAULT_VERSION = "1.1.0"
 
     def __init__(
@@ -100,9 +100,9 @@ class BAPConnectionClient:
             
         return context
 
-    def search_connection(self) -> Dict[str, Any]:
+    def search_retail(self) -> Dict[str, Any]:
         """
-        Send a Beckn *search* request for a "Connection" service.
+        Send a Beckn *search* request for a "solar" retail service.
         Returns
         -------
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
@@ -117,7 +117,7 @@ class BAPConnectionClient:
             "context": context,
             "message": {
                 "intent": {
-                    "item": {"descriptor": {"name": "Connection"}}
+                    "item": {"descriptor": {"name": "solar"}}
                 }
             },
         }
@@ -127,18 +127,18 @@ class BAPConnectionClient:
             url,
             json=payload,
             headers=headers,
-            timeout= self.DEFAULT_TIMEOUT
+            timeout=self.DEFAULT_TIMEOUT
         )
         resp.raise_for_status()
         return resp.json()
 
-    def select_connection(
+    def select_retail(
         self,
         provider_id: str,
         item_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *select* request for a "Connection" service.
+        Send a Beckn *select* request for a retail service.
 
         Parameters
         ----------
@@ -181,13 +181,13 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def init_connection(
+    def init_retail(
         self,
         provider_id: str,
         item_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *init* request for a "Connection" service.
+        Send a Beckn *init* request for a retail service.
 
         Parameters
         ----------
@@ -230,7 +230,7 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def confirm_connection(
+    def confirm_retail(
         self,
         provider_id: str,
         item_id: str,
@@ -240,7 +240,7 @@ class BAPConnectionClient:
         customer_email: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *confirm* request for a "Connection" service.
+        Send a Beckn *confirm* request for a retail service.
 
         Parameters
         ----------
@@ -301,12 +301,12 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def status_connection(
+    def status_retail(
         self,
         order_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *status* request for a "Connection" service.
+        Send a Beckn *status* request for a retail service.
 
         Parameters
         ----------
@@ -347,14 +347,14 @@ if __name__ == "__main__":
     from datetime import datetime
     
     # Create client with default configuration
-    client = BAPConnectionClient()
+    client = BAPRetailClient()
     
     # Create timestamp for unique filenames
-    # timestamp = "datetime.now().strftime("%Y%m%d_%H%M%S")"
-    timestamp = "1"    
+    # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = 1
     # Example search
-    search_response = client.search_connection()
-    with open(f"search_response_{timestamp}.json", "w") as f:
+    search_response = client.search_retail()
+    with open(f"retail_search_response_{timestamp}.json", "w") as f:
         json.dump(search_response, f, indent=2)
     
     # Extract provider and item IDs from search response
@@ -362,44 +362,44 @@ if __name__ == "__main__":
     item_id = search_response["responses"][0]["message"]["catalog"]["providers"][0]["items"][0]["id"]
     
     # Example select
-    select_response = client.select_connection(
+    select_response = client.select_retail(
         provider_id=provider_id,
         item_id=item_id,
     )
-    with open(f"select_response_{timestamp}.json", "w") as f:
+    with open(f"retail_select_response_{timestamp}.json", "w") as f:
         json.dump(select_response, f, indent=2)
     
     # Example init
-    init_response = client.init_connection(
+    init_response = client.init_retail(
         provider_id=provider_id,
         item_id=item_id,
     )
-    with open(f"init_response_{timestamp}.json", "w") as f:
+    with open(f"retail_init_response_{timestamp}.json", "w") as f:
         json.dump(init_response, f, indent=2)
     
     # Extract order ID from init response
     order_id = init_response["responses"][0]["message"]["order"]["provider"]["id"]
     
     # Example confirm
-    confirm_response = client.confirm_connection(
+    confirm_response = client.confirm_retail(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=init_response["responses"][0]["message"]["order"]["fulfillments"][0]["id"],
-        customer_name="Saksham",
+        customer_name="Lisa",
         customer_phone="876756454",
-        customer_email="Homie@mailinator.com",
+        customer_email="LisaS@mailinator.com",
     )
-    with open(f"confirm_response_{timestamp}.json", "w") as f:
+    with open(f"retail_confirm_response_{timestamp}.json", "w") as f:
         json.dump(confirm_response, f, indent=2)
-    print(order_id)
+    order_id = confirm_response["responses"][0]["message"]["order"]["id"]
     # Example status
-    status_response = {}
-    while not status_response.get("responses") and int(timestamp) < 5:
-        timestamp = int(timestamp) + 1
-        status_response = client.status_connection(
+    status_response  = {}
+    while not status_response.get("responses") and timestamp <10:
+        timestamp = timestamp + 1
+        status_response = client.status_retail(
             order_id=order_id,
         )
-        with open(f"status_response_{timestamp}.json", "w") as f:
+        with open(f"retail_status_response_{timestamp}.json", "w") as f:
             json.dump(status_response, f, indent=2)
     
     from pprint import pprint
@@ -412,4 +412,4 @@ if __name__ == "__main__":
     print("\nConfirm Response:")
     pprint(confirm_response)
     print("\nStatus Response:")
-    pprint(status_response)
+    pprint(status_response) 

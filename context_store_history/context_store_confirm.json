@@ -1,0 +1,986 @@
+{
+  "connection_details": {
+    "connection_type": null,
+    "provider_id": "334",
+    "item_id": "471",
+    "selection_id": null,
+    "transaction_id": null,
+    "fulfillment_id": "617",
+    "customer_name": "Saksham",
+    "customer_phone": "123456789",
+    "customer_email": "saks@gmail.com"
+  },
+  "user_details": {
+    "name": null,
+    "location": null,
+    "address": null,
+    "phone": null,
+    "email": null,
+    "provider_id": "334",
+    "item_id": "471"
+  },
+  "transaction_history": {
+    "search": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "search",
+        "timestamp": "2025-05-15T07:23:02.921Z",
+        "message_id": "5ef4b389-06a2-4c4c-bf4d-eada4f6b20e5",
+        "transaction_id": "155c65bf-7f5d-4a21-9fe6-6e73a0baeec3",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_search",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "155c65bf-7f5d-4a21-9fe6-6e73a0baeec3",
+            "message_id": "5ef4b389-06a2-4c4c-bf4d-eada4f6b20e5",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T07:23:03.648Z"
+          },
+          "message": {
+            "catalog": {
+              "descriptor": {
+                "name": "UrjaKart",
+                "code": "UrjaKart",
+                "short_desc": "A seller platform for energy solutions, enabling seamless transactions of batteries, solar panels, and other renewable energy products."
+              },
+              "providers": [
+                {
+                  "id": "334",
+                  "descriptor": {
+                    "name": "San Francisco Electric Authority",
+                    "short_desc": "Official provider for new electricity connections",
+                    "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                    "additional_desc": {
+                      "url": "sf_electric_authority"
+                    },
+                    "images": [
+                      {
+                        "url": "https://sfea.gov/logo.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Official provider for new electricity connections",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    },
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "29",
+                      "gps": "37.7504,-122.4138",
+                      "address": "1320 Potrero Ave, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94110"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "471",
+                      "descriptor": {
+                        "name": "Residential Electricity Connection",
+                        "code": "Residential Electricity Connection",
+                        "short_desc": "Residential Electricity Connection",
+                        "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                        "images": [
+                          {
+                            "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "80",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 20
+                        }
+                      },
+                      "category_ids": [
+                        "44"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "29"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "connection-type",
+                            "code": "connection-type"
+                          },
+                          "list": [
+                            {
+                              "value": "Resendial",
+                              "descriptor": {
+                                "code": "property-type",
+                                "name": "property-type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "documentation",
+                            "code": "documentation"
+                          },
+                          "list": [
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            },
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "472",
+                      "descriptor": {
+                        "name": "Commercial Electricity Connection",
+                        "code": "Commercial Electricity Connection",
+                        "short_desc": "Commercial Electricity Connection",
+                        "long_desc": "Commercial Electricity Connection",
+                        "images": [
+                          {
+                            "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "200",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 20
+                        }
+                      },
+                      "category_ids": [
+                        "44"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "29"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "connection-type",
+                            "code": "connection-type"
+                          },
+                          "list": [
+                            {
+                              "value": "Commercial",
+                              "descriptor": {
+                                "code": "property-type",
+                                "name": "property-type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "documentation",
+                            "code": "documentation"
+                          },
+                          "list": [
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            },
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "select": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "select",
+        "timestamp": "2025-05-15T07:23:17.915Z",
+        "message_id": "31cdad7b-f8bd-4622-b9b8-a910b9fe777a",
+        "transaction_id": "11ca581c-09fc-4f47-b7ed-ccac1e88e27e",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_select",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "11ca581c-09fc-4f47-b7ed-ccac1e88e27e",
+            "message_id": "31cdad7b-f8bd-4622-b9b8-a910b9fe777a",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T07:23:18.525Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "334",
+                "descriptor": {
+                  "name": "San Francisco Electric Authority",
+                  "short_desc": "Official provider for new electricity connections",
+                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "additional_desc": {
+                    "url": "sf_electric_authority"
+                  },
+                  "images": [
+                    {
+                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "locations": [
+                  {
+                    "id": "29",
+                    "gps": "37.7504,-122.4138",
+                    "address": "1320 Potrero Ave, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94110"
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  },
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "471",
+                  "descriptor": {
+                    "name": "Residential Electricity Connection",
+                    "code": "Residential Electricity Connection",
+                    "short_desc": "Residential Electricity Connection",
+                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "images": [
+                      {
+                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "location_ids": [
+                    "29"
+                  ],
+                  "price": {
+                    "value": "80",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 20,
+                      "measure": {
+                        "value": "20"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "category_ids": [
+                    "44"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "description": "connection-type",
+                        "code": "connection-type"
+                      },
+                      "list": [
+                        {
+                          "value": "Resendial",
+                          "descriptor": {
+                            "code": "property-type",
+                            "name": "property-type"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "documentation",
+                        "code": "documentation"
+                      },
+                      "list": [
+                        {
+                          "value": "Three Phase",
+                          "descriptor": {
+                            "code": "phase",
+                            "name": "phase"
+                          },
+                          "display": true
+                        },
+                        {
+                          "value": "Three Phase",
+                          "descriptor": {
+                            "code": "phase",
+                            "name": "phase"
+                          },
+                          "display": true
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "80",
+                  "currency": "USD"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "471"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "471"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "type": "SITE_VISIT",
+                  "rateable": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "init": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "init",
+        "timestamp": "2025-05-15T07:23:33.442Z",
+        "message_id": "ef84dd5f-95ef-4387-8e12-0e91b0fadcf0",
+        "transaction_id": "c5dbb062-b5d1-465d-8ead-283f81aac677",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_init",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "c5dbb062-b5d1-465d-8ead-283f81aac677",
+            "message_id": "ef84dd5f-95ef-4387-8e12-0e91b0fadcf0",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T07:23:34.008Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "334",
+                "descriptor": {
+                  "name": "San Francisco Electric Authority",
+                  "short_desc": "Official provider for new electricity connections",
+                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "additional_desc": {
+                    "url": "sf_electric_authority"
+                  },
+                  "images": [
+                    {
+                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "short_desc": "Official provider for new electricity connections",
+                "fulfillments": [
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  },
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  }
+                ],
+                "locations": [
+                  {
+                    "id": "29",
+                    "gps": "37.7504,-122.4138",
+                    "address": "1320 Potrero Ave, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94110"
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "471",
+                  "descriptor": {
+                    "name": "Residential Electricity Connection",
+                    "code": "Residential Electricity Connection",
+                    "short_desc": "Residential Electricity Connection",
+                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "images": [
+                      {
+                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "price": {
+                    "value": "80",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 20,
+                      "measure": {
+                        "value": "20"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "category_ids": [
+                    "44"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ],
+                  "location_ids": [
+                    "29"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "description": "connection-type",
+                        "code": "connection-type"
+                      },
+                      "list": [
+                        {
+                          "value": "Resendial",
+                          "descriptor": {
+                            "code": "property-type",
+                            "name": "property-type"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "documentation",
+                        "code": "documentation"
+                      },
+                      "list": [
+                        {
+                          "value": "Three Phase",
+                          "descriptor": {
+                            "code": "phase",
+                            "name": "phase"
+                          },
+                          "display": true
+                        },
+                        {
+                          "value": "Three Phase",
+                          "descriptor": {
+                            "code": "phase",
+                            "name": "phase"
+                          },
+                          "display": true
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "80",
+                  "currency": "USD"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "471"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "471"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "type": "SITE_VISIT",
+                  "rateable": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "confirm": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "confirm",
+        "timestamp": "2025-05-15T07:24:21.622Z",
+        "message_id": "3af7f273-4144-4cfe-99c8-8d45fc003ff7",
+        "transaction_id": "b74c209e-7a79-48e9-81b9-fc20f3d5db91",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_confirm",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "b74c209e-7a79-48e9-81b9-fc20f3d5db91",
+            "message_id": "3af7f273-4144-4cfe-99c8-8d45fc003ff7",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T07:24:21.829Z"
+          },
+          "message": {
+            "order": {
+              "id": "3802",
+              "provider": {
+                "id": "334",
+                "descriptor": {
+                  "name": "San Francisco Electric Authority",
+                  "short_desc": "Official provider for new electricity connections",
+                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "additional_desc": {
+                    "url": "sf_electric_authority"
+                  },
+                  "images": [
+                    {
+                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "short_desc": "Official provider for new electricity connections",
+                "locations": [
+                  {
+                    "id": "29",
+                    "gps": "37.7504,-122.4138",
+                    "address": "1320 Potrero Ave, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94110"
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true,
+                    "state": {
+                      "description": "ORDER RECEIVED",
+                      "descriptor": {
+                        "name": "ORDER RECEIVED"
+                      }
+                    }
+                  },
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "471",
+                  "descriptor": {
+                    "name": "Residential Electricity Connection",
+                    "code": "Residential Electricity Connection",
+                    "short_desc": "Residential Electricity Connection",
+                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "images": [
+                      {
+                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "price": {
+                    "value": "80",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 20,
+                      "measure": {
+                        "value": "20"
+                      }
+                    },
+                    "selected": {
+                      "count": 20,
+                      "measure": {
+                        "value": "20"
+                      }
+                    }
+                  },
+                  "category_ids": [
+                    "44"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ],
+                  "location_ids": [
+                    "29"
+                  ],
+                  "tags": [
+                    {
+                      "display": true,
+                      "descriptor": {
+                        "description": "connection-type"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "description": "property-type",
+                            "code": "property-type"
+                          },
+                          "value": "Resendial",
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "display": true,
+                      "descriptor": {
+                        "description": "documentation"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "description": "phase",
+                            "code": "phase"
+                          },
+                          "value": "Three Phase",
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "display": true,
+                      "descriptor": {
+                        "description": "documentation"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "description": "phase",
+                            "code": "phase"
+                          },
+                          "value": "Three Phase",
+                          "display": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "471"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "471"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "type": "SITE_VISIT",
+                  "state": {
+                    "descriptor": {
+                      "code": "ORDER_RECEIVED",
+                      "short_desc": "ORDER RECEIVED"
+                    },
+                    "updated_at": "2025-05-15T07:24:21.740Z"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

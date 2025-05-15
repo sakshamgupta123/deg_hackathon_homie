@@ -1,14 +1,15 @@
 import os
 import time
 import uuid
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, Literal
 
 import requests
 
 
-class BAPConnectionClient:
+class BAPClient:
     """
-    A client for interacting with Beckn Protocol APIs.
+    A unified client for interacting with Beckn Protocol APIs.
+    This class can handle different domains (retail, connection, solar, etc.) and can be extended for future domains.
     """
     
     # Default configuration values
@@ -20,12 +21,28 @@ class BAPConnectionClient:
     DEFAULT_COUNTRY_CODE = "USA"
     DEFAULT_CITY_CODE = "NANP:628"
     DEFAULT_TIMEOUT = 100
-    DEFAULT_DOMAIN = "deg:service"
     DEFAULT_VERSION = "1.1.0"
+
+    # Domain configurations
+    DOMAINS = {
+        "retail": {
+            "domain": "deg:retail",
+            "search_intent": "solar"
+        },
+        "connection": {
+            "domain": "deg:service",
+            "search_intent": "Connection"
+        },
+        "solar": {
+            "domain": "deg:service",
+            "search_intent": "resi"
+        }
+    }
 
     def __init__(
         self,
         *,
+        domain: Literal["retail", "connection", "solar"],
         base_url: Optional[str] = None,     
         bap_id: Optional[str] = None,
         bap_uri: Optional[str] = None,
@@ -38,6 +55,7 @@ class BAPConnectionClient:
 
         Parameters
         ----------
+        domain      The domain to use (retail, connection, or solar)
         base_url    Fully-qualified BAP client URL
         bap_id      Your BAP network identifier
         bap_uri     Your BAP callback URI
@@ -45,6 +63,11 @@ class BAPConnectionClient:
         bpp_uri     Target BPP URI
         session     Optional pre-configured requests.Session
         """
+        if domain not in self.DOMAINS:
+            raise ValueError(f"Domain must be one of {list(self.DOMAINS.keys())}")
+            
+        self.domain = domain
+        self.domain_config = self.DOMAINS[domain]
         self.base_url = base_url or self.DEFAULT_BASE_URL
         self.bap_id = bap_id or self.DEFAULT_BAP_ID
         self.bap_uri = bap_uri or self.DEFAULT_BAP_URI
@@ -82,7 +105,7 @@ class BAPConnectionClient:
             location["city"] = {"code": city_code or self.DEFAULT_CITY_CODE}
 
         context: Dict[str, Any] = {
-            "domain": self.DEFAULT_DOMAIN,
+            "domain": self.domain_config["domain"],
             "action": action,
             "location": location,
             "version": self.DEFAULT_VERSION,
@@ -100,9 +123,9 @@ class BAPConnectionClient:
             
         return context
 
-    def search_connection(self) -> Dict[str, Any]:
+    def search(self) -> Dict[str, Any]:
         """
-        Send a Beckn *search* request for a "Connection" service.
+        Send a Beckn *search* request for the configured domain.
         Returns
         -------
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
@@ -117,7 +140,7 @@ class BAPConnectionClient:
             "context": context,
             "message": {
                 "intent": {
-                    "item": {"descriptor": {"name": "Connection"}}
+                    "item": {"descriptor": {"name": self.domain_config["search_intent"]}}
                 }
             },
         }
@@ -127,18 +150,18 @@ class BAPConnectionClient:
             url,
             json=payload,
             headers=headers,
-            timeout= self.DEFAULT_TIMEOUT
+            timeout=self.DEFAULT_TIMEOUT
         )
         resp.raise_for_status()
         return resp.json()
 
-    def select_connection(
+    def select(
         self,
         provider_id: str,
         item_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *select* request for a "Connection" service.
+        Send a Beckn *select* request.
 
         Parameters
         ----------
@@ -181,13 +204,13 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def init_connection(
+    def init(
         self,
         provider_id: str,
         item_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *init* request for a "Connection" service.
+        Send a Beckn *init* request.
 
         Parameters
         ----------
@@ -230,7 +253,7 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def confirm_connection(
+    def confirm(
         self,
         provider_id: str,
         item_id: str,
@@ -240,7 +263,7 @@ class BAPConnectionClient:
         customer_email: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *confirm* request for a "Connection" service.
+        Send a Beckn *confirm* request.
 
         Parameters
         ----------
@@ -301,12 +324,12 @@ class BAPConnectionClient:
         resp.raise_for_status()
         return resp.json()
 
-    def status_connection(
+    def status(
         self,
         order_id: str,
     ) -> Dict[str, Any]:
         """
-        Send a Beckn *status* request for a "Connection" service.
+        Send a Beckn *status* request.
 
         Parameters
         ----------
@@ -346,15 +369,14 @@ if __name__ == "__main__":
     import json
     from datetime import datetime
     
-    # Create client with default configuration
-    client = BAPConnectionClient()
+    # Create clients for different domains
+    # client = BAPClient(domain="retail")
+    client = BAPClient(domain="retail")
     
-    # Create timestamp for unique filenames
-    # timestamp = "datetime.now().strftime("%Y%m%d_%H%M%S")"
-    timestamp = "1"    
+    timestamp = 1
     # Example search
-    search_response = client.search_connection()
-    with open(f"search_response_{timestamp}.json", "w") as f:
+    search_response = client.search()
+    with open(f"retail_search_response_{timestamp}.json", "w") as f:
         json.dump(search_response, f, indent=2)
     
     # Extract provider and item IDs from search response
@@ -362,44 +384,44 @@ if __name__ == "__main__":
     item_id = search_response["responses"][0]["message"]["catalog"]["providers"][0]["items"][0]["id"]
     
     # Example select
-    select_response = client.select_connection(
+    select_response = client.select(
         provider_id=provider_id,
         item_id=item_id,
     )
-    with open(f"select_response_{timestamp}.json", "w") as f:
+    with open(f"retail_select_response_{timestamp}.json", "w") as f:
         json.dump(select_response, f, indent=2)
     
     # Example init
-    init_response = client.init_connection(
+    init_response = client.init(
         provider_id=provider_id,
         item_id=item_id,
     )
-    with open(f"init_response_{timestamp}.json", "w") as f:
+    with open(f"retail_init_response_{timestamp}.json", "w") as f:
         json.dump(init_response, f, indent=2)
     
     # Extract order ID from init response
     order_id = init_response["responses"][0]["message"]["order"]["provider"]["id"]
     
     # Example confirm
-    confirm_response = client.confirm_connection(
+    confirm_response = client.confirm(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=init_response["responses"][0]["message"]["order"]["fulfillments"][0]["id"],
-        customer_name="Saksham",
+        customer_name="Lisa",
         customer_phone="876756454",
-        customer_email="Homie@mailinator.com",
+        customer_email="LisaS@mailinator.com",
     )
-    with open(f"confirm_response_{timestamp}.json", "w") as f:
+    with open(f"retail_confirm_response_{timestamp}.json", "w") as f:
         json.dump(confirm_response, f, indent=2)
-    print(order_id)
+    order_id = confirm_response["responses"][0]["message"]["order"]["id"]
     # Example status
-    status_response = {}
-    while not status_response.get("responses") and int(timestamp) < 5:
-        timestamp = int(timestamp) + 1
-        status_response = client.status_connection(
+    status_response  = {}
+    while not status_response.get("responses") and timestamp <10:
+        timestamp = timestamp + 1
+        status_response = client.status(
             order_id=order_id,
         )
-        with open(f"status_response_{timestamp}.json", "w") as f:
+        with open(f"retail_status_response_{timestamp}.json", "w") as f:
             json.dump(status_response, f, indent=2)
     
     from pprint import pprint
@@ -412,4 +434,4 @@ if __name__ == "__main__":
     print("\nConfirm Response:")
     pprint(confirm_response)
     print("\nStatus Response:")
-    pprint(status_response)
+    pprint(status_response) 

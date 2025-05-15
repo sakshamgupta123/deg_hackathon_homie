@@ -7,7 +7,7 @@ from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
 from app.prompt_book.connection_agent_prompt import CONNECTION_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
-from app.beckn_apis.connection import BAPConnectionClient
+from app.beckn_apis.beckn_client import BAPClient
 
 
 # Configure simple progress logger
@@ -28,7 +28,7 @@ progress_handler.setFormatter(formatter)
 # Add handler to logger
 progress_logger.addHandler(progress_handler)
 
-connection_client = BAPConnectionClient()
+connection_client = BAPClient(domain="connection")
 
 
 def _save_context_store(step: str):
@@ -67,7 +67,7 @@ def _handle_search() -> Dict:
     context_store.update_connection_details()
     context_store.update_user_details()
 
-    response = connection_client.search_connection()
+    response = connection_client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
     return response
@@ -96,7 +96,7 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         item_id=item_id
     )
 
-    response = connection_client.select_connection(
+    response = connection_client.select(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -122,7 +122,7 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
     # Update user details in context
     context_store.update_user_details(**init_data)
 
-    response = connection_client.init_connection(
+    response = connection_client.init(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -156,7 +156,7 @@ def _handle_confirm(
         customer_email=customer_email
     )
 
-    response = connection_client.confirm_connection(
+    response = connection_client.confirm(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=fulfillment_id,
@@ -184,7 +184,7 @@ def _handle_status(order_id: str) -> Dict:
     context_store.update_connection_details(
         order_id=order_id
     )
-    response = connection_client.status_connection(order_id=order_id)
+    response = connection_client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
     return response
