@@ -11,7 +11,7 @@ class BAPClient:
     A unified client for interacting with Beckn Protocol APIs.
     This class can handle different domains (retail, connection, solar, etc.) and can be extended for future domains.
     """
-    
+
     # Default configuration values
     DEFAULT_BAP_ID = "bap-ps-network-deg-team13.becknprotocol.io"
     DEFAULT_BAP_URI = "https://bap-ps-network-deg-team13.becknprotocol.io/"
@@ -43,7 +43,7 @@ class BAPClient:
         self,
         *,
         domain: Literal["retail", "connection", "solar"],
-        base_url: Optional[str] = None,     
+        base_url: Optional[str] = None,
         bap_id: Optional[str] = None,
         bap_uri: Optional[str] = None,
         bpp_id: Optional[str] = None,
@@ -65,7 +65,7 @@ class BAPClient:
         """
         if domain not in self.DOMAINS:
             raise ValueError(f"Domain must be one of {list(self.DOMAINS.keys())}")
-            
+
         self.domain = domain
         self.domain_config = self.DOMAINS[domain]
         self.base_url = base_url or self.DEFAULT_BASE_URL
@@ -117,10 +117,10 @@ class BAPClient:
             "message_id": str(uuid.uuid4()),
             "timestamp": str(now),
         }
-        
+
         if extra_context:
             context.update(extra_context)
-            
+
         return context
 
     def search(self) -> Dict[str, Any]:
@@ -131,7 +131,7 @@ class BAPClient:
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
         """
         url = f"{self.base_url.rstrip('/')}/search"
-        
+
         context = self._create_context(
             "search",
         )
@@ -173,9 +173,9 @@ class BAPClient:
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
         """
         url = f"{self.base_url.rstrip('/')}/select"
-        
+
         context = self._create_context(
-            "select"          
+            "select"
         )
 
         payload = {
@@ -222,7 +222,7 @@ class BAPClient:
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
         """
         url = f"{self.base_url.rstrip('/')}/init"
-        
+
         context = self._create_context(
             "init"
         )
@@ -279,7 +279,7 @@ class BAPClient:
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
         """
         url = f"{self.base_url.rstrip('/')}/confirm"
-        
+
         context = self._create_context(
             "confirm"
         )
@@ -340,7 +340,7 @@ class BAPClient:
         Parsed JSON response (``dict``). Raises ``requests.HTTPError`` on non-2xx.
         """
         url = f"{self.base_url.rstrip('/')}/status"
-        
+
         context = self._create_context(
             "status"
         )
@@ -368,21 +368,21 @@ class BAPClient:
 if __name__ == "__main__":
     import json
     from datetime import datetime
-    
+
     # Create clients for different domains
     # client = BAPClient(domain="retail")
     client = BAPClient(domain="retail")
-    
+
     timestamp = 1
     # Example search
     search_response = client.search()
     with open(f"retail_search_response_{timestamp}.json", "w") as f:
         json.dump(search_response, f, indent=2)
-    
+
     # Extract provider and item IDs from search response
     provider_id = search_response["responses"][0]["message"]["catalog"]["providers"][0]["id"]
     item_id = search_response["responses"][0]["message"]["catalog"]["providers"][0]["items"][0]["id"]
-    
+
     # Example select
     select_response = client.select(
         provider_id=provider_id,
@@ -390,7 +390,7 @@ if __name__ == "__main__":
     )
     with open(f"retail_select_response_{timestamp}.json", "w") as f:
         json.dump(select_response, f, indent=2)
-    
+
     # Example init
     init_response = client.init(
         provider_id=provider_id,
@@ -398,10 +398,10 @@ if __name__ == "__main__":
     )
     with open(f"retail_init_response_{timestamp}.json", "w") as f:
         json.dump(init_response, f, indent=2)
-    
+
     # Extract order ID from init response
     order_id = init_response["responses"][0]["message"]["order"]["provider"]["id"]
-    
+
     # Example confirm
     confirm_response = client.confirm(
         provider_id=provider_id,
@@ -423,7 +423,7 @@ if __name__ == "__main__":
         )
         with open(f"retail_status_response_{timestamp}.json", "w") as f:
             json.dump(status_response, f, indent=2)
-    
+
     from pprint import pprint
     print("\nSearch Response:")
     pprint(search_response)
@@ -434,4 +434,4 @@ if __name__ == "__main__":
     print("\nConfirm Response:")
     pprint(confirm_response)
     print("\nStatus Response:")
-    pprint(status_response) 
+    pprint(status_response)

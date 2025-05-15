@@ -1,37 +1,24 @@
-import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from typing import Dict
 import json
-import logging
+import sys
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
 from app.prompt_book.solar_retail_agent_prompt import SOLAR_RETAIL_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
 from app.beckn_apis.beckn_client import BAPClient
-import app.models 
+import app.models
+from app.utils.logging_config import get_logger
+from app.utils.progress_tracker import update_progress_by_handler
 
-# Configure simple progress logger
-progress_logger = logging.getLogger('progress')
-progress_logger.setLevel(logging.INFO)
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-# Create logs directory if it doesn't exist
-os.makedirs('logs', exist_ok=True)
+# Get logger for this module
+logger = get_logger('SolarRetail')
 
-# Create file handler for progress logs
-progress_handler = logging.FileHandler('logs/progress.log')
-progress_handler.setLevel(logging.INFO)
-
-# Create simple formatter
-formatter = logging.Formatter('%(asctime)s - %(message)s')
-progress_handler.setFormatter(formatter)
-
-# Add handler to logger
-progress_logger.addHandler(progress_handler)
-
-client = BAPClient(domain="retail")              
+client = BAPClient(domain="retail")
 
 
 def _save_context_store(step: str):
@@ -55,13 +42,18 @@ def _save_context_store(step: str):
     with open(filename, 'w') as f:
         json.dump(state, f, indent=2)
 
+    logger.info("Step - Context store saved")
+
 
 def _handle_search() -> Dict:
     """
     Search for available solar products and services.
     No parameters required as search is performed with default configurations.
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 1/5: Search")
+    logger.info("Step Search - Starting operation")
+
+    # Update progress tracker for this step
+    update_progress_by_handler("solar_retail", "search")
 
     # Update context with search parameters
     context_store.update_connection_details()
@@ -70,6 +62,8 @@ def _handle_search() -> Dict:
     response = client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
+
+    logger.info("Step Search - Operation completed")
     return response
 
 
@@ -81,12 +75,17 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         provider_id (str): ID of the selected provider
         item_id (str): ID of the selected solar product or service
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 2/5: Select")
+    logger.info("Step Select - Starting operation for provider %s, item %s", provider_id, item_id)
+
+    # Update progress tracker for this step
+    update_progress_by_handler("solar_retail", "select")
 
     if not context_store.get_transaction_history().get('search'):
+        logger.error("Step Select - Failed: Search must be performed before selection")
         raise Exception('Search must be performed before selection')
 
     if not provider_id or not item_id:
+        logger.error("Step Select - Failed: Provider ID and Item ID are required")
         raise Exception('Provider ID and Item ID are required')
 
     # Update context with selection details
@@ -101,6 +100,8 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
     )
     context_store.add_transaction_history('select', response)
     _save_context_store('select')
+
+    logger.info("Step Select - Operation completed")
     return response
 
 
@@ -112,9 +113,13 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
         provider_id (str): ID of the selected provider
         item_id (str): ID of the selected solar product or service
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 3/5: Initialize")
+    logger.info("Step Init - Starting operation for provider %s, item %s", provider_id, item_id)
+
+    # Update progress tracker for this step
+    update_progress_by_handler("solar_retail", "init")
 
     if not context_store.get_transaction_history().get('select'):
+        logger.error("Step Init - Failed: Selection must be made before initialization")
         raise Exception('Selection must be made before initialization')
 
     init_data = {
@@ -131,6 +136,8 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
     )
     context_store.add_transaction_history('init', response)
     _save_context_store('init')
+
+    logger.info("Step Init - Operation completed")
     return response
 
 
@@ -153,9 +160,13 @@ def _handle_confirm(
         customer_phone (str): Primary contact phone number
         customer_email (str): Customer's email address
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 4/5: Confirm")
+    logger.info("Step Confirm - Starting operation for customer %s", customer_name)
+
+    # Update progress tracker for this step
+    update_progress_by_handler("solar_retail", "confirm")
 
     if not context_store.get_transaction_history().get('init'):
+        logger.error("Step Confirm - Failed: Initialization must be done before confirmation")
         raise Exception('Initialization must be done before confirmation')
 
     context_store.update_connection_details(
@@ -177,6 +188,8 @@ def _handle_confirm(
     )
     context_store.add_transaction_history('confirm', response)
     _save_context_store('confirm')
+
+    logger.info("Step Confirm - Operation completed")
     return response
 
 
@@ -187,9 +200,13 @@ def _handle_status(order_id: str) -> Dict:
     Args:
         order_id (str): The order ID obtained from init response
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 5/5: Status Check")
+    logger.info("Step Status - Starting check for order %s", order_id)
+
+    # Update progress tracker for this step
+    update_progress_by_handler("solar_retail", "status")
 
     if not context_store.get_transaction_history().get('confirm'):
+        logger.error("Step Status - Failed: Confirmation must be done before status check")
         raise Exception('Confirmation must be done before status check')
 
     context_store.update_connection_details(
@@ -198,6 +215,8 @@ def _handle_status(order_id: str) -> Dict:
     response = client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
+
+    logger.info("Step Status - Operation completed")
     return response
 
 
@@ -226,3 +245,5 @@ root_agent = Agent(
         ),
     ],
 )
+
+logger.info("Agent initialized with %d tools", len(root_agent.tools))

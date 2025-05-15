@@ -4,53 +4,34 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 
 from typing import Dict
 import json
-import logging
 import shutil
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
+
 from app.solar_service_agent.agent import root_agent as solar_service_agent
 from app.solar_retail_agent.agent import root_agent as solar_retail_agent
 from app.connection_agent.agent import root_agent as connection_agent
 from app.subsidy_agent.agent import root_agent as subsidy_agent
 from app.prompt_book.homie_agent_prompt import HOMIE_AGENT_SYSTEM_PROMPT
-from app.beckn_apis.beckn_client import BAPClient
-import app.models 
 from app.world_engine_apis.meter_client import MeterClient
 from app.world_engine_apis.energy_resource_client import EnergyResourceClient
+import app.models
+from app.utils.logging_config import get_logger
 
+logger = get_logger('homie')
 
 # if logs and context_store_history directory   exist, delete them
 if os.path.exists('logs'):
     shutil.rmtree('logs', ignore_errors=True)
 if os.path.exists('context_store_history'):
     shutil.rmtree('context_store_history', ignore_errors=True)  # force delete
-    
 
-# Configure simple progress logger
-progress_logger = logging.getLogger('progress')
-progress_logger.setLevel(logging.INFO)
-
-# Create logs directory if it doesn't exist
-os.makedirs('logs', exist_ok=True)
-
-# Create file handler for progress logs
-progress_handler = logging.FileHandler('logs/progress.log')
-progress_handler.setLevel(logging.INFO)
-
-# Create simple formatter
-formatter = logging.Formatter('%(asctime)s - %(message)s')
-progress_handler.setFormatter(formatter)
-
-# Add handler to logger
-progress_logger.addHandler(progress_handler)
-
-client = BAPClient(domain="retail")              
 
 def _create_meter_energy_resource():
     """
     Creates a new meter and associated energy resource.
-    
+
     Creates a smart meter with default parameters using the MeterClient, then creates
     a consumer energy resource linked to that meter using the EnergyResourceClient.
 
@@ -61,7 +42,7 @@ def _create_meter_energy_resource():
         - meter_id (int): ID of the created meter
         - energy_resource_id (int): ID of the created energy resource
     """
-    
+
     meter_client = MeterClient()
     meter = meter_client.create_meter(
         code="METER306",
@@ -87,4 +68,5 @@ root_agent = Agent(
         ),
     ],
 )
-    
+
+logger.info("Agent initialized with %d sub-agents", len(root_agent.sub_agents))

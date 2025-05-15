@@ -1,26 +1,33 @@
 {
   "connection_details": {
     "connection_type": null,
-    "provider_id": "334",
-    "item_id": "471",
+    "provider_id": "332",
+    "item_id": "469",
     "selection_id": null,
-    "transaction_id": null
+    "transaction_id": null,
+    "fulfillment_id": "3",
+    "customer_name": "Saksham Gupta",
+    "customer_phone": "1111111111",
+    "customer_email": "s@x.com",
+    "order_id": "3843"
   },
   "user_details": {
     "name": null,
     "location": null,
     "address": null,
     "phone": null,
-    "email": null
+    "email": null,
+    "provider_id": "27",
+    "item_id": "33"
   },
   "transaction_history": {
     "search": {
       "context": {
         "ttl": "PT10M",
         "action": "search",
-        "timestamp": "2025-05-15T07:23:02.921Z",
-        "message_id": "5ef4b389-06a2-4c4c-bf4d-eada4f6b20e5",
-        "transaction_id": "155c65bf-7f5d-4a21-9fe6-6e73a0baeec3",
+        "timestamp": "2025-05-15T18:58:28.176Z",
+        "message_id": "033c6a85-a799-4250-b1fa-dbe8170c6b44",
+        "transaction_id": "d85a48d2-cfe7-4ec1-a4e4-1176aa09f09d",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -56,10 +63,10 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "155c65bf-7f5d-4a21-9fe6-6e73a0baeec3",
-            "message_id": "5ef4b389-06a2-4c4c-bf4d-eada4f6b20e5",
+            "transaction_id": "d85a48d2-cfe7-4ec1-a4e4-1176aa09f09d",
+            "message_id": "033c6a85-a799-4250-b1fa-dbe8170c6b44",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:23:03.648Z"
+            "timestamp": "2025-05-15T18:58:28.445Z"
           },
           "message": {
             "catalog": {
@@ -69,6 +76,651 @@
                 "short_desc": "A seller platform for energy solutions, enabling seamless transactions of batteries, solar panels, and other renewable energy products."
               },
               "providers": [
+                {
+                  "id": "329",
+                  "descriptor": {
+                    "name": "Luminalt",
+                    "short_desc": "Local solar + storage experts",
+                    "long_desc": "Luminalt is a San Francisco-based solar and battery installer focused on high-quality, customized solutions for homes and businesses since 2004.",
+                    "additional_desc": {
+                      "url": "beckn://luminalt.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08S70PGPR7-ee45c968a4",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Local solar + storage experts",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "29",
+                      "gps": "37.7504,-122.4138",
+                      "address": "1320 Potrero Ave, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94110"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "466",
+                      "descriptor": {
+                        "name": "sp-resi-001",
+                        "code": "sp-resi-001",
+                        "short_desc": "Empaneled 2kW solar panel setup for residential rooftops with financial assistance",
+                        "long_desc": "A professionally installed 2kW rooftop solar system ideal for residential properties. Includes end-to-end installation by empaneled service providers, eligibility for financial assistance or subsidies, and support with documentation like ID proof, ownership certificate, electricity bill, and net metering forms. Designed to help reduce grid dependency and lower electricity bills",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "8000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 3
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "29"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "2KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "330",
+                  "descriptor": {
+                    "name": "Sunrun",
+                    "short_desc": "National solar provider",
+                    "long_desc": "Sunrun is one of the leading residential solar and battery service providers in the U.S., offering affordable clean energy solutions for homeowners.",
+                    "additional_desc": {
+                      "url": "beckn://sunrun.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08S70K6QJD-96be3beaa6",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "National solar provider",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "30",
+                      "gps": "37.7890,-122.4014",
+                      "address": "595 Market St, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94105"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "467",
+                      "descriptor": {
+                        "name": "sp-resi-002",
+                        "code": "sp-resi-002",
+                        "short_desc": "3kW solar system with smart inverter and EMI options",
+                        "long_desc": "A residential 3kW solar installation with high-efficiency panels and a smart inverter for energy optimization. Includes support for EMI-based payment and installation by certified vendors",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "8000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 2
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "30"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "3KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "331",
+                  "descriptor": {
+                    "name": "Infinity Energy",
+                    "short_desc": "Solar and energy efficiency services",
+                    "long_desc": "Infinity Energy offers solar installation, energy audits, and system optimization services across California, including in the Bay Area.",
+                    "additional_desc": {
+                      "url": "beckn://infinityenergy.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08RTKQ0AHZ-ca020e41ad",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Solar and energy efficiency services",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "31",
+                      "gps": "37.7834,-122.2730",
+                      "address": "1101 Marina Village Pkwy, Alameda",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94501"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "468",
+                      "descriptor": {
+                        "name": "sp-resi-003",
+                        "code": "sp-resi-003",
+                        "short_desc": "1.5kW compact solar unit for small rooftops",
+                        "long_desc": "A compact 1.5kW rooftop solar unit designed for small houses or flats. Ideal for low energy consumption homes, includes basic documentation support and certified installation",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "6000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 4
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "31"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "1.5KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "FALSE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "332",
+                  "descriptor": {
+                    "name": "SolarUnion",
+                    "short_desc": "California-based solar provider",
+                    "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
+                    "additional_desc": {
+                      "url": "beckn://solarunion.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08RY5N8BCL-48973e2458",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "California-based solar provider",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "32",
+                      "gps": "37.7935,-122.3988",
+                      "address": "50 California St, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94111"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "469",
+                      "descriptor": {
+                        "name": "sp-resi-004",
+                        "code": "sp-resi-004",
+                        "short_desc": "4kW solar panel system for high-usage homes",
+                        "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "7000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 5
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "32"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "4KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "333",
+                  "descriptor": {
+                    "name": "Horizon Solar Power",
+                    "short_desc": "Full-service solar provider",
+                    "long_desc": "Horizon Solar Power delivers custom solar solutions for homes and businesses, emphasizing efficient installs and customer education throughout the process.",
+                    "additional_desc": {
+                      "url": "beckn://horizon-solar.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08RY5NA4CU-b1e682886a",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Full-service solar provider",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "33",
+                      "gps": "37.8047,-122.4011",
+                      "address": "1160 Battery St E, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94111"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "470",
+                      "descriptor": {
+                        "name": "sp-resi-005",
+                        "code": "sp-resi-005",
+                        "short_desc": "Subsidized 2.5kW solar package with full paperwork help",
+                        "long_desc": "Subsidized 2.5kW solar panel package for residential rooftops. Includes end-to-end service from installation to documentation and assistance with government subsidy programs",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "8300",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "33"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "2.5KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
                 {
                   "id": "334",
                   "descriptor": {
@@ -87,11 +739,6 @@
                   },
                   "short_desc": "Official provider for new electricity connections",
                   "fulfillments": [
-                    {
-                      "id": "617",
-                      "type": "SITE_VISIT",
-                      "rateable": true
-                    },
                     {
                       "id": "617",
                       "type": "SITE_VISIT",
@@ -192,82 +839,6 @@
                           ]
                         }
                       ]
-                    },
-                    {
-                      "id": "472",
-                      "descriptor": {
-                        "name": "Commercial Electricity Connection",
-                        "code": "Commercial Electricity Connection",
-                        "short_desc": "Commercial Electricity Connection",
-                        "long_desc": "Commercial Electricity Connection",
-                        "images": [
-                          {
-                            "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png"
-                          }
-                        ]
-                      },
-                      "rateable": true,
-                      "rating": "null",
-                      "price": {
-                        "value": "200",
-                        "currency": "USD"
-                      },
-                      "quantity": {
-                        "available": {
-                          "count": 20
-                        }
-                      },
-                      "category_ids": [
-                        "44"
-                      ],
-                      "fulfillment_ids": [
-                        "617"
-                      ],
-                      "location_ids": [
-                        "29"
-                      ],
-                      "tags": [
-                        {
-                          "descriptor": {
-                            "description": "connection-type",
-                            "code": "connection-type"
-                          },
-                          "list": [
-                            {
-                              "value": "Commercial",
-                              "descriptor": {
-                                "code": "property-type",
-                                "name": "property-type"
-                              },
-                              "display": true
-                            }
-                          ]
-                        },
-                        {
-                          "descriptor": {
-                            "description": "documentation",
-                            "code": "documentation"
-                          },
-                          "list": [
-                            {
-                              "value": "Three Phase",
-                              "descriptor": {
-                                "code": "phase",
-                                "name": "phase"
-                              },
-                              "display": true
-                            },
-                            {
-                              "value": "Three Phase",
-                              "descriptor": {
-                                "code": "phase",
-                                "name": "phase"
-                              },
-                              "display": true
-                            }
-                          ]
-                        }
-                      ]
                     }
                   ]
                 }
@@ -281,9 +852,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "select",
-        "timestamp": "2025-05-15T07:23:17.915Z",
-        "message_id": "31cdad7b-f8bd-4622-b9b8-a910b9fe777a",
-        "transaction_id": "11ca581c-09fc-4f47-b7ed-ccac1e88e27e",
+        "timestamp": "2025-05-15T18:59:05.606Z",
+        "message_id": "51202547-0983-4c0d-9e97-19c2e202591e",
+        "transaction_id": "8850d2f7-6993-4116-b1c1-b1bee99154b5",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -319,13 +890,773 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "11ca581c-09fc-4f47-b7ed-ccac1e88e27e",
-            "message_id": "31cdad7b-f8bd-4622-b9b8-a910b9fe777a",
+            "transaction_id": "8850d2f7-6993-4116-b1c1-b1bee99154b5",
+            "message_id": "51202547-0983-4c0d-9e97-19c2e202591e",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:23:18.525Z"
+            "timestamp": "2025-05-15T18:59:06.007Z"
           },
           "message": {
             "order": {
+              "provider": {
+                "id": "332",
+                "descriptor": {
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
+                  "additional_desc": {
+                    "url": "beckn://solarunion.com"
+                  },
+                  "images": [
+                    {
+                      "url": "https://logo.com",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "locations": [
+                  {
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94111"
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  },
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "469",
+                  "descriptor": {
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
+                    "images": [
+                      {
+                        "url": "https://logo.com",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "location_ids": [
+                    "32"
+                  ],
+                  "price": {
+                    "value": "7000",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 5,
+                      "measure": {
+                        "value": "5"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "category_ids": [
+                    "43"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "description": "system_specification",
+                        "code": "system_specification"
+                      },
+                      "list": [
+                        {
+                          "value": "4KW",
+                          "descriptor": {
+                            "code": "system_capacity",
+                            "name": "system capacity"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "installation_context",
+                        "code": "installation_context"
+                      },
+                      "list": [
+                        {
+                          "value": "Residential",
+                          "descriptor": {
+                            "code": "property_type",
+                            "name": "property type"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "financial_details",
+                        "code": "financial_details"
+                      },
+                      "list": [
+                        {
+                          "value": "TRUE",
+                          "descriptor": {
+                            "code": "financial_assistance",
+                            "name": "financial assistance"
+                          },
+                          "display": true
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "7000",
+                  "currency": "USD"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "type": "SITE_VISIT",
+                  "rateable": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "init": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "init",
+        "timestamp": "2025-05-15T18:58:08.344Z",
+        "message_id": "e3ad5738-a471-4eca-9b47-8e4a57eced1e",
+        "transaction_id": "c9d821f9-1881-42e1-b068-2895c85d5237",
+        "domain": "deg:retail",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:retail",
+            "action": "on_init",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "c9d821f9-1881-42e1-b068-2895c85d5237",
+            "message_id": "e3ad5738-a471-4eca-9b47-8e4a57eced1e",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:58:08.798Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "27",
+                "descriptor": {
+                  "name": "Bluebird Solar Panel",
+                  "short_desc": "Bluebird Solar Panel",
+                  "long_desc": "Bluebird Solar Panel",
+                  "images": [
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "categories": [
+                  {
+                    "id": "16",
+                    "descriptor": {
+                      "name": "SOLAR ENERGY"
+                    }
+                  }
+                ],
+                "short_desc": "Bluebird Solar Panel",
+                "fulfillments": [
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  },
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  }
+                ],
+                "locations": [
+                  {
+                    "id": "3",
+                    "gps": "28.44877751913814,77.04643194750535",
+                    "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                    "city": {
+                      "name": "Gurugram"
+                    },
+                    "country": {
+                      "name": "India"
+                    },
+                    "state": {
+                      "name": "Haryana"
+                    }
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "33",
+                  "descriptor": {
+                    "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "code": "Solar Panel",
+                    "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                    "images": [
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "4.5",
+                  "rateable": true,
+                  "price": {
+                    "value": "187500",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 1000,
+                      "measure": {
+                        "value": "1000"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "fulfillment_ids": [
+                    "3"
+                  ],
+                  "location_ids": [
+                    "3"
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "187500",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "Item Price",
+                    "price": {
+                      "currency": "USD",
+                      "value": "2000"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "174"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  }
+                ]
+              },
+              "categories": [
+                {
+                  "id": "16",
+                  "value": "SOLAR ENERGY",
+                  "createdAt": "2024-11-27T11:00:56.170Z",
+                  "updatedAt": "2024-11-27T11:00:56.170Z",
+                  "publishedAt": "2024-11-27T11:00:56.167Z",
+                  "category_code": "SOLAR_ENERGY"
+                }
+              ],
+              "fulfillments": [
+                {
+                  "id": "3",
+                  "type": "Delivery in 5 Days",
+                  "rating": "4.3",
+                  "rateable": true
+                }
+              ],
+              "payments": [
+                {
+                  "collected_by": "BPP",
+                  "params": {
+                    "price": "187500",
+                    "currency": "INR"
+                  },
+                  "status": "PAID",
+                  "type": "PRE-ORDER"
+                },
+                {
+                  "collected_by": "BPP",
+                  "params": {
+                    "bank_account_name": "SBI",
+                    "bank_account": "1224555666",
+                    "bank_code": "SBIN000001",
+                    "price": "187500",
+                    "currency": "INR"
+                  },
+                  "status": "PAID",
+                  "type": "PRE-ORDER"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "confirm": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "confirm",
+        "timestamp": "2025-05-15T18:58:13.386Z",
+        "message_id": "de38ffdc-0d65-494e-95ac-35ed32725e39",
+        "transaction_id": "ef64e658-ee0b-4049-b34d-e786b7d017a6",
+        "domain": "deg:retail",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:retail",
+            "action": "on_confirm",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "ef64e658-ee0b-4049-b34d-e786b7d017a6",
+            "message_id": "de38ffdc-0d65-494e-95ac-35ed32725e39",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:58:13.932Z"
+          },
+          "message": {
+            "order": {
+              "id": "3844",
+              "provider": {
+                "id": "27",
+                "descriptor": {
+                  "name": "Bluebird Solar Panel",
+                  "short_desc": "Bluebird Solar Panel",
+                  "long_desc": "Bluebird Solar Panel",
+                  "images": [
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "categories": [
+                  {
+                    "id": "16",
+                    "descriptor": {
+                      "name": "SOLAR ENERGY"
+                    }
+                  }
+                ],
+                "short_desc": "Bluebird Solar Panel",
+                "locations": [
+                  {
+                    "id": "3",
+                    "gps": "28.44877751913814,77.04643194750535",
+                    "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                    "city": {
+                      "name": "Gurugram"
+                    },
+                    "country": {
+                      "name": "India"
+                    },
+                    "state": {
+                      "name": "Haryana"
+                    }
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true,
+                    "state": {
+                      "description": "ORDER DELIVERED",
+                      "descriptor": {
+                        "name": "ORDER DELIVERED"
+                      }
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "33",
+                  "descriptor": {
+                    "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "code": "Solar Panel",
+                    "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                    "images": [
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "4.5",
+                  "rateable": true,
+                  "price": {
+                    "value": "187500",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 1000,
+                      "measure": {
+                        "value": "1000"
+                      }
+                    },
+                    "selected": {
+                      "count": 1000,
+                      "measure": {
+                        "value": "1000"
+                      }
+                    }
+                  },
+                  "fulfillment_ids": [
+                    "3"
+                  ],
+                  "location_ids": [
+                    "3"
+                  ]
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "Item Price",
+                    "price": {
+                      "currency": "USD",
+                      "value": "2000"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "174"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "3",
+                  "type": "Delivery in 5 Days",
+                  "state": {
+                    "descriptor": {
+                      "code": "ORDER_DELIVERED",
+                      "short_desc": "ORDER DELIVERED"
+                    },
+                    "updated_at": "2025-05-15T18:58:13.823Z"
+                  }
+                }
+              ],
+              "payments": [
+                {
+                  "collected_by": "BPP",
+                  "params": {
+                    "price": "187500",
+                    "currency": "INR"
+                  },
+                  "status": "PAID",
+                  "type": "PRE-ORDER"
+                },
+                {
+                  "collected_by": "BPP",
+                  "params": {
+                    "bank_account_name": "SBI",
+                    "bank_account": "1224555666",
+                    "bank_code": "SBIN000001",
+                    "price": "187500",
+                    "currency": "INR"
+                  },
+                  "status": "PAID",
+                  "type": "PRE-ORDER"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "status": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "status",
+        "timestamp": "2025-05-15T18:56:53.564Z",
+        "message_id": "5b333b58-58fc-401d-a5d3-87177c28fc3e",
+        "transaction_id": "bd2c7ebd-0585-49ec-8a90-0b949ff9c6ef",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_status",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "bd2c7ebd-0585-49ec-8a90-0b949ff9c6ef",
+            "message_id": "5b333b58-58fc-401d-a5d3-87177c28fc3e",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:56:53.729Z"
+          },
+          "message": {
+            "order": {
+              "id": "3843",
+              "created_at": "2025-05-15T18:55:53.235Z",
               "provider": {
                 "id": "334",
                 "descriptor": {
@@ -337,11 +1668,12 @@
                   },
                   "images": [
                     {
-                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "url": "https://sfea.gov/logo.png",
                       "size_type": "sm"
                     }
                   ]
                 },
+                "short_desc": "Official provider for new electricity connections",
                 "locations": [
                   {
                     "id": "29",
@@ -357,18 +1689,6 @@
                       "name": "CA"
                     },
                     "area_code": "94110"
-                  }
-                ],
-                "fulfillments": [
-                  {
-                    "id": "617",
-                    "type": "SITE_VISIT",
-                    "rateable": true
-                  },
-                  {
-                    "id": "617",
-                    "type": "SITE_VISIT",
-                    "rateable": true
                   }
                 ],
                 "rateable": true
@@ -413,60 +1733,50 @@
                   ],
                   "fulfillment_ids": [
                     "617"
-                  ],
-                  "tags": [
-                    {
-                      "descriptor": {
-                        "description": "connection-type",
-                        "code": "connection-type"
-                      },
-                      "list": [
-                        {
-                          "value": "Resendial",
-                          "descriptor": {
-                            "code": "property-type",
-                            "name": "property-type"
-                          },
-                          "display": true
-                        }
-                      ]
+                  ]
+                }
+              ],
+              "price": {
+                "value": "80",
+                "currency": "USD"
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "state": {
+                    "descriptor": {
+                      "code": "ORDER_DELIVERED",
+                      "short_desc": "ORDER DELIVERED"
                     },
+                    "updated_at": "2025-05-15T18:56:31.218Z"
+                  },
+                  "customer": {
+                    "contact": {
+                      "email": "s@x.com",
+                      "phone": "123456789"
+                    },
+                    "person": {
+                      "name": "Saksham"
+                    }
+                  },
+                  "stops": [
                     {
-                      "descriptor": {
-                        "description": "documentation",
-                        "code": "documentation"
-                      },
-                      "list": [
-                        {
-                          "value": "Three Phase",
-                          "descriptor": {
-                            "code": "phase",
-                            "name": "phase"
-                          },
-                          "display": true
-                        },
-                        {
-                          "value": "Three Phase",
-                          "descriptor": {
-                            "code": "phase",
-                            "name": "phase"
-                          },
-                          "display": true
-                        }
-                      ]
+                      "type": "start"
                     }
                   ],
-                  "xinput": {
-                    "form": {
-                      "mime_type": "text/html"
+                  "agent": {
+                    "person": {
+                      "name": " "
                     }
-                  }
+                  },
+                  "rating": "null",
+                  "rateable": true
                 }
               ],
               "quote": {
                 "price": {
-                  "value": "80",
-                  "currency": "USD"
+                  "value": "100",
+                  "currency": "INR"
                 },
                 "breakup": [
                   {
@@ -491,13 +1801,7 @@
                   }
                 ]
               },
-              "fulfillments": [
-                {
-                  "id": "617",
-                  "type": "SITE_VISIT",
-                  "rateable": true
-                }
-              ]
+              "status": "ACTIVE"
             }
           }
         }

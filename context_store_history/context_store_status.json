@@ -1,15 +1,15 @@
 {
   "connection_details": {
     "connection_type": null,
-    "provider_id": "334",
-    "item_id": "471",
+    "provider_id": "332",
+    "item_id": "469",
     "selection_id": null,
     "transaction_id": null,
     "fulfillment_id": "617",
-    "customer_name": "Saksham",
-    "customer_phone": "123456789",
-    "customer_email": "saks@gmail.com",
-    "order_id": "3802"
+    "customer_name": "Saksham Gupta",
+    "customer_phone": "1111111111",
+    "customer_email": "s@x.com",
+    "order_id": "3845"
   },
   "user_details": {
     "name": null,
@@ -17,17 +17,17 @@
     "address": null,
     "phone": null,
     "email": null,
-    "provider_id": "334",
-    "item_id": "471"
+    "provider_id": "332",
+    "item_id": "469"
   },
   "transaction_history": {
     "search": {
       "context": {
         "ttl": "PT10M",
         "action": "search",
-        "timestamp": "2025-05-15T07:23:02.921Z",
-        "message_id": "5ef4b389-06a2-4c4c-bf4d-eada4f6b20e5",
-        "transaction_id": "155c65bf-7f5d-4a21-9fe6-6e73a0baeec3",
+        "timestamp": "2025-05-15T18:58:28.176Z",
+        "message_id": "033c6a85-a799-4250-b1fa-dbe8170c6b44",
+        "transaction_id": "d85a48d2-cfe7-4ec1-a4e4-1176aa09f09d",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -63,10 +63,10 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "155c65bf-7f5d-4a21-9fe6-6e73a0baeec3",
-            "message_id": "5ef4b389-06a2-4c4c-bf4d-eada4f6b20e5",
+            "transaction_id": "d85a48d2-cfe7-4ec1-a4e4-1176aa09f09d",
+            "message_id": "033c6a85-a799-4250-b1fa-dbe8170c6b44",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:23:03.648Z"
+            "timestamp": "2025-05-15T18:58:28.445Z"
           },
           "message": {
             "catalog": {
@@ -76,6 +76,651 @@
                 "short_desc": "A seller platform for energy solutions, enabling seamless transactions of batteries, solar panels, and other renewable energy products."
               },
               "providers": [
+                {
+                  "id": "329",
+                  "descriptor": {
+                    "name": "Luminalt",
+                    "short_desc": "Local solar + storage experts",
+                    "long_desc": "Luminalt is a San Francisco-based solar and battery installer focused on high-quality, customized solutions for homes and businesses since 2004.",
+                    "additional_desc": {
+                      "url": "beckn://luminalt.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08S70PGPR7-ee45c968a4",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Local solar + storage experts",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "29",
+                      "gps": "37.7504,-122.4138",
+                      "address": "1320 Potrero Ave, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94110"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "466",
+                      "descriptor": {
+                        "name": "sp-resi-001",
+                        "code": "sp-resi-001",
+                        "short_desc": "Empaneled 2kW solar panel setup for residential rooftops with financial assistance",
+                        "long_desc": "A professionally installed 2kW rooftop solar system ideal for residential properties. Includes end-to-end installation by empaneled service providers, eligibility for financial assistance or subsidies, and support with documentation like ID proof, ownership certificate, electricity bill, and net metering forms. Designed to help reduce grid dependency and lower electricity bills",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "8000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 3
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "29"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "2KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "330",
+                  "descriptor": {
+                    "name": "Sunrun",
+                    "short_desc": "National solar provider",
+                    "long_desc": "Sunrun is one of the leading residential solar and battery service providers in the U.S., offering affordable clean energy solutions for homeowners.",
+                    "additional_desc": {
+                      "url": "beckn://sunrun.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08S70K6QJD-96be3beaa6",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "National solar provider",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "30",
+                      "gps": "37.7890,-122.4014",
+                      "address": "595 Market St, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94105"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "467",
+                      "descriptor": {
+                        "name": "sp-resi-002",
+                        "code": "sp-resi-002",
+                        "short_desc": "3kW solar system with smart inverter and EMI options",
+                        "long_desc": "A residential 3kW solar installation with high-efficiency panels and a smart inverter for energy optimization. Includes support for EMI-based payment and installation by certified vendors",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "8000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 2
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "30"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "3KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "331",
+                  "descriptor": {
+                    "name": "Infinity Energy",
+                    "short_desc": "Solar and energy efficiency services",
+                    "long_desc": "Infinity Energy offers solar installation, energy audits, and system optimization services across California, including in the Bay Area.",
+                    "additional_desc": {
+                      "url": "beckn://infinityenergy.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08RTKQ0AHZ-ca020e41ad",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Solar and energy efficiency services",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "31",
+                      "gps": "37.7834,-122.2730",
+                      "address": "1101 Marina Village Pkwy, Alameda",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94501"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "468",
+                      "descriptor": {
+                        "name": "sp-resi-003",
+                        "code": "sp-resi-003",
+                        "short_desc": "1.5kW compact solar unit for small rooftops",
+                        "long_desc": "A compact 1.5kW rooftop solar unit designed for small houses or flats. Ideal for low energy consumption homes, includes basic documentation support and certified installation",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "6000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 4
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "31"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "1.5KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "FALSE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "332",
+                  "descriptor": {
+                    "name": "SolarUnion",
+                    "short_desc": "California-based solar provider",
+                    "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
+                    "additional_desc": {
+                      "url": "beckn://solarunion.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08RY5N8BCL-48973e2458",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "California-based solar provider",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "32",
+                      "gps": "37.7935,-122.3988",
+                      "address": "50 California St, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94111"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "469",
+                      "descriptor": {
+                        "name": "sp-resi-004",
+                        "code": "sp-resi-004",
+                        "short_desc": "4kW solar panel system for high-usage homes",
+                        "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "7000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 5
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "32"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "4KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "333",
+                  "descriptor": {
+                    "name": "Horizon Solar Power",
+                    "short_desc": "Full-service solar provider",
+                    "long_desc": "Horizon Solar Power delivers custom solar solutions for homes and businesses, emphasizing efficient installs and customer education throughout the process.",
+                    "additional_desc": {
+                      "url": "beckn://horizon-solar.com"
+                    },
+                    "images": [
+                      {
+                        "url": "https://slack-files.com/T068S9XKP9T-F08RY5NA4CU-b1e682886a",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "Full-service solar provider",
+                  "fulfillments": [
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "33",
+                      "gps": "37.8047,-122.4011",
+                      "address": "1160 Battery St E, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94111"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "470",
+                      "descriptor": {
+                        "name": "sp-resi-005",
+                        "code": "sp-resi-005",
+                        "short_desc": "Subsidized 2.5kW solar package with full paperwork help",
+                        "long_desc": "Subsidized 2.5kW solar panel package for residential rooftops. Includes end-to-end service from installation to documentation and assistance with government subsidy programs",
+                        "images": [
+                          {
+                            "url": "https://logo.com"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "8300",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "category_ids": [
+                        "43"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "33"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "system_specification",
+                            "code": "system_specification"
+                          },
+                          "list": [
+                            {
+                              "value": "2.5KW",
+                              "descriptor": {
+                                "code": "system_capacity",
+                                "name": "system capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "installation_context",
+                            "code": "installation_context"
+                          },
+                          "list": [
+                            {
+                              "value": "Residential",
+                              "descriptor": {
+                                "code": "property_type",
+                                "name": "property type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "financial_details",
+                            "code": "financial_details"
+                          },
+                          "list": [
+                            {
+                              "value": "TRUE",
+                              "descriptor": {
+                                "code": "financial_assistance",
+                                "name": "financial assistance"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
                 {
                   "id": "334",
                   "descriptor": {
@@ -94,11 +739,6 @@
                   },
                   "short_desc": "Official provider for new electricity connections",
                   "fulfillments": [
-                    {
-                      "id": "617",
-                      "type": "SITE_VISIT",
-                      "rateable": true
-                    },
                     {
                       "id": "617",
                       "type": "SITE_VISIT",
@@ -199,82 +839,6 @@
                           ]
                         }
                       ]
-                    },
-                    {
-                      "id": "472",
-                      "descriptor": {
-                        "name": "Commercial Electricity Connection",
-                        "code": "Commercial Electricity Connection",
-                        "short_desc": "Commercial Electricity Connection",
-                        "long_desc": "Commercial Electricity Connection",
-                        "images": [
-                          {
-                            "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png"
-                          }
-                        ]
-                      },
-                      "rateable": true,
-                      "rating": "null",
-                      "price": {
-                        "value": "200",
-                        "currency": "USD"
-                      },
-                      "quantity": {
-                        "available": {
-                          "count": 20
-                        }
-                      },
-                      "category_ids": [
-                        "44"
-                      ],
-                      "fulfillment_ids": [
-                        "617"
-                      ],
-                      "location_ids": [
-                        "29"
-                      ],
-                      "tags": [
-                        {
-                          "descriptor": {
-                            "description": "connection-type",
-                            "code": "connection-type"
-                          },
-                          "list": [
-                            {
-                              "value": "Commercial",
-                              "descriptor": {
-                                "code": "property-type",
-                                "name": "property-type"
-                              },
-                              "display": true
-                            }
-                          ]
-                        },
-                        {
-                          "descriptor": {
-                            "description": "documentation",
-                            "code": "documentation"
-                          },
-                          "list": [
-                            {
-                              "value": "Three Phase",
-                              "descriptor": {
-                                "code": "phase",
-                                "name": "phase"
-                              },
-                              "display": true
-                            },
-                            {
-                              "value": "Three Phase",
-                              "descriptor": {
-                                "code": "phase",
-                                "name": "phase"
-                              },
-                              "display": true
-                            }
-                          ]
-                        }
-                      ]
                     }
                   ]
                 }
@@ -288,9 +852,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "select",
-        "timestamp": "2025-05-15T07:23:17.915Z",
-        "message_id": "31cdad7b-f8bd-4622-b9b8-a910b9fe777a",
-        "transaction_id": "11ca581c-09fc-4f47-b7ed-ccac1e88e27e",
+        "timestamp": "2025-05-15T18:59:05.606Z",
+        "message_id": "51202547-0983-4c0d-9e97-19c2e202591e",
+        "transaction_id": "8850d2f7-6993-4116-b1c1-b1bee99154b5",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -326,34 +890,34 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "11ca581c-09fc-4f47-b7ed-ccac1e88e27e",
-            "message_id": "31cdad7b-f8bd-4622-b9b8-a910b9fe777a",
+            "transaction_id": "8850d2f7-6993-4116-b1c1-b1bee99154b5",
+            "message_id": "51202547-0983-4c0d-9e97-19c2e202591e",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:23:18.525Z"
+            "timestamp": "2025-05-15T18:59:06.007Z"
           },
           "message": {
             "order": {
               "provider": {
-                "id": "334",
+                "id": "332",
                 "descriptor": {
-                  "name": "San Francisco Electric Authority",
-                  "short_desc": "Official provider for new electricity connections",
-                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
                   "additional_desc": {
-                    "url": "sf_electric_authority"
+                    "url": "beckn://solarunion.com"
                   },
                   "images": [
                     {
-                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "url": "https://logo.com",
                       "size_type": "sm"
                     }
                   ]
                 },
                 "locations": [
                   {
-                    "id": "29",
-                    "gps": "37.7504,-122.4138",
-                    "address": "1320 Potrero Ave, SF",
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
                     "city": {
                       "name": "San Francisco"
                     },
@@ -363,7 +927,7 @@
                     "state": {
                       "name": "CA"
                     },
-                    "area_code": "94110"
+                    "area_code": "94111"
                   }
                 ],
                 "fulfillments": [
@@ -382,15 +946,15 @@
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "469",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
                     "images": [
                       {
-                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "url": "https://logo.com",
                         "size_type": "sm"
                       }
                     ]
@@ -398,17 +962,17 @@
                   "rating": "null",
                   "rateable": true,
                   "location_ids": [
-                    "29"
+                    "32"
                   ],
                   "price": {
-                    "value": "80",
+                    "value": "7000",
                     "currency": "USD"
                   },
                   "quantity": {
                     "available": {
-                      "count": 20,
+                      "count": 5,
                       "measure": {
-                        "value": "20"
+                        "value": "5"
                       }
                     },
                     "selected": {
@@ -416,7 +980,7 @@
                     }
                   },
                   "category_ids": [
-                    "44"
+                    "43"
                   ],
                   "fulfillment_ids": [
                     "617"
@@ -424,15 +988,15 @@
                   "tags": [
                     {
                       "descriptor": {
-                        "description": "connection-type",
-                        "code": "connection-type"
+                        "description": "system_specification",
+                        "code": "system_specification"
                       },
                       "list": [
                         {
-                          "value": "Resendial",
+                          "value": "4KW",
                           "descriptor": {
-                            "code": "property-type",
-                            "name": "property-type"
+                            "code": "system_capacity",
+                            "name": "system capacity"
                           },
                           "display": true
                         }
@@ -440,23 +1004,31 @@
                     },
                     {
                       "descriptor": {
-                        "description": "documentation",
-                        "code": "documentation"
+                        "description": "installation_context",
+                        "code": "installation_context"
                       },
                       "list": [
                         {
-                          "value": "Three Phase",
+                          "value": "Residential",
                           "descriptor": {
-                            "code": "phase",
-                            "name": "phase"
+                            "code": "property_type",
+                            "name": "property type"
                           },
                           "display": true
-                        },
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "financial_details",
+                        "code": "financial_details"
+                      },
+                      "list": [
                         {
-                          "value": "Three Phase",
+                          "value": "TRUE",
                           "descriptor": {
-                            "code": "phase",
-                            "name": "phase"
+                            "code": "financial_assistance",
+                            "name": "financial assistance"
                           },
                           "display": true
                         }
@@ -472,7 +1044,7 @@
               ],
               "quote": {
                 "price": {
-                  "value": "80",
+                  "value": "7000",
                   "currency": "USD"
                 },
                 "breakup": [
@@ -483,7 +1055,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   },
                   {
@@ -493,7 +1065,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   }
                 ]
@@ -514,9 +1086,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "init",
-        "timestamp": "2025-05-15T07:23:33.442Z",
-        "message_id": "ef84dd5f-95ef-4387-8e12-0e91b0fadcf0",
-        "transaction_id": "c5dbb062-b5d1-465d-8ead-283f81aac677",
+        "timestamp": "2025-05-15T18:59:10.617Z",
+        "message_id": "25bf60f5-ac0d-445f-95c8-1c2329485c2f",
+        "transaction_id": "706ebc5a-95e7-48c6-828d-d315092554d5",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -552,30 +1124,30 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "c5dbb062-b5d1-465d-8ead-283f81aac677",
-            "message_id": "ef84dd5f-95ef-4387-8e12-0e91b0fadcf0",
+            "transaction_id": "706ebc5a-95e7-48c6-828d-d315092554d5",
+            "message_id": "25bf60f5-ac0d-445f-95c8-1c2329485c2f",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:23:34.008Z"
+            "timestamp": "2025-05-15T18:59:10.964Z"
           },
           "message": {
             "order": {
               "provider": {
-                "id": "334",
+                "id": "332",
                 "descriptor": {
-                  "name": "San Francisco Electric Authority",
-                  "short_desc": "Official provider for new electricity connections",
-                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
                   "additional_desc": {
-                    "url": "sf_electric_authority"
+                    "url": "beckn://solarunion.com"
                   },
                   "images": [
                     {
-                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "url": "https://logo.com",
                       "size_type": "sm"
                     }
                   ]
                 },
-                "short_desc": "Official provider for new electricity connections",
+                "short_desc": "California-based solar provider",
                 "fulfillments": [
                   {
                     "id": "617",
@@ -590,9 +1162,9 @@
                 ],
                 "locations": [
                   {
-                    "id": "29",
-                    "gps": "37.7504,-122.4138",
-                    "address": "1320 Potrero Ave, SF",
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
                     "city": {
                       "name": "San Francisco"
                     },
@@ -602,22 +1174,22 @@
                     "state": {
                       "name": "CA"
                     },
-                    "area_code": "94110"
+                    "area_code": "94111"
                   }
                 ],
                 "rateable": true
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "469",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
                     "images": [
                       {
-                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "url": "https://logo.com",
                         "size_type": "sm"
                       }
                     ]
@@ -625,14 +1197,14 @@
                   "rating": "null",
                   "rateable": true,
                   "price": {
-                    "value": "80",
+                    "value": "7000",
                     "currency": "USD"
                   },
                   "quantity": {
                     "available": {
-                      "count": 20,
+                      "count": 5,
                       "measure": {
-                        "value": "20"
+                        "value": "5"
                       }
                     },
                     "selected": {
@@ -640,26 +1212,26 @@
                     }
                   },
                   "category_ids": [
-                    "44"
+                    "43"
                   ],
                   "fulfillment_ids": [
                     "617"
                   ],
                   "location_ids": [
-                    "29"
+                    "32"
                   ],
                   "tags": [
                     {
                       "descriptor": {
-                        "description": "connection-type",
-                        "code": "connection-type"
+                        "description": "system_specification",
+                        "code": "system_specification"
                       },
                       "list": [
                         {
-                          "value": "Resendial",
+                          "value": "4KW",
                           "descriptor": {
-                            "code": "property-type",
-                            "name": "property-type"
+                            "code": "system_capacity",
+                            "name": "system capacity"
                           },
                           "display": true
                         }
@@ -667,23 +1239,31 @@
                     },
                     {
                       "descriptor": {
-                        "description": "documentation",
-                        "code": "documentation"
+                        "description": "installation_context",
+                        "code": "installation_context"
                       },
                       "list": [
                         {
-                          "value": "Three Phase",
+                          "value": "Residential",
                           "descriptor": {
-                            "code": "phase",
-                            "name": "phase"
+                            "code": "property_type",
+                            "name": "property type"
                           },
                           "display": true
-                        },
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "financial_details",
+                        "code": "financial_details"
+                      },
+                      "list": [
                         {
-                          "value": "Three Phase",
+                          "value": "TRUE",
                           "descriptor": {
-                            "code": "phase",
-                            "name": "phase"
+                            "code": "financial_assistance",
+                            "name": "financial assistance"
                           },
                           "display": true
                         }
@@ -699,7 +1279,7 @@
               ],
               "quote": {
                 "price": {
-                  "value": "80",
+                  "value": "7000",
                   "currency": "USD"
                 },
                 "breakup": [
@@ -710,7 +1290,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   },
                   {
@@ -720,7 +1300,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   }
                 ]
@@ -741,9 +1321,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "confirm",
-        "timestamp": "2025-05-15T07:24:21.622Z",
-        "message_id": "3af7f273-4144-4cfe-99c8-8d45fc003ff7",
-        "transaction_id": "b74c209e-7a79-48e9-81b9-fc20f3d5db91",
+        "timestamp": "2025-05-15T18:59:22.137Z",
+        "message_id": "7a4d51d6-86b6-4bf2-abd4-70d221d07e4f",
+        "transaction_id": "937c9da9-5977-4ddc-b1f9-86533c0e8bde",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -779,36 +1359,36 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "b74c209e-7a79-48e9-81b9-fc20f3d5db91",
-            "message_id": "3af7f273-4144-4cfe-99c8-8d45fc003ff7",
+            "transaction_id": "937c9da9-5977-4ddc-b1f9-86533c0e8bde",
+            "message_id": "7a4d51d6-86b6-4bf2-abd4-70d221d07e4f",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:24:21.829Z"
+            "timestamp": "2025-05-15T18:59:22.546Z"
           },
           "message": {
             "order": {
-              "id": "3802",
+              "id": "3845",
               "provider": {
-                "id": "334",
+                "id": "332",
                 "descriptor": {
-                  "name": "San Francisco Electric Authority",
-                  "short_desc": "Official provider for new electricity connections",
-                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
                   "additional_desc": {
-                    "url": "sf_electric_authority"
+                    "url": "beckn://solarunion.com"
                   },
                   "images": [
                     {
-                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                      "url": "https://logo.com",
                       "size_type": "sm"
                     }
                   ]
                 },
-                "short_desc": "Official provider for new electricity connections",
+                "short_desc": "California-based solar provider",
                 "locations": [
                   {
-                    "id": "29",
-                    "gps": "37.7504,-122.4138",
-                    "address": "1320 Potrero Ave, SF",
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
                     "city": {
                       "name": "San Francisco"
                     },
@@ -818,7 +1398,7 @@
                     "state": {
                       "name": "CA"
                     },
-                    "area_code": "94110"
+                    "area_code": "94111"
                   }
                 ],
                 "fulfillments": [
@@ -843,15 +1423,15 @@
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "469",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
                     "images": [
                       {
-                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "url": "https://logo.com",
                         "size_type": "sm"
                       }
                     ]
@@ -859,45 +1439,45 @@
                   "rating": "null",
                   "rateable": true,
                   "price": {
-                    "value": "80",
+                    "value": "7000",
                     "currency": "USD"
                   },
                   "quantity": {
                     "available": {
-                      "count": 20,
+                      "count": 5,
                       "measure": {
-                        "value": "20"
+                        "value": "5"
                       }
                     },
                     "selected": {
-                      "count": 20,
+                      "count": 5,
                       "measure": {
-                        "value": "20"
+                        "value": "5"
                       }
                     }
                   },
                   "category_ids": [
-                    "44"
+                    "43"
                   ],
                   "fulfillment_ids": [
                     "617"
                   ],
                   "location_ids": [
-                    "29"
+                    "32"
                   ],
                   "tags": [
                     {
                       "display": true,
                       "descriptor": {
-                        "description": "connection-type"
+                        "description": "system_specification"
                       },
                       "list": [
                         {
                           "descriptor": {
-                            "description": "property-type",
-                            "code": "property-type"
+                            "description": "system capacity",
+                            "code": "system_capacity"
                           },
-                          "value": "Resendial",
+                          "value": "4KW",
                           "display": true
                         }
                       ]
@@ -905,15 +1485,15 @@
                     {
                       "display": true,
                       "descriptor": {
-                        "description": "documentation"
+                        "description": "installation_context"
                       },
                       "list": [
                         {
                           "descriptor": {
-                            "description": "phase",
-                            "code": "phase"
+                            "description": "property type",
+                            "code": "property_type"
                           },
-                          "value": "Three Phase",
+                          "value": "Residential",
                           "display": true
                         }
                       ]
@@ -921,15 +1501,15 @@
                     {
                       "display": true,
                       "descriptor": {
-                        "description": "documentation"
+                        "description": "financial_details"
                       },
                       "list": [
                         {
                           "descriptor": {
-                            "description": "phase",
-                            "code": "phase"
+                            "description": "financial assistance",
+                            "code": "financial_assistance"
                           },
-                          "value": "Three Phase",
+                          "value": "TRUE",
                           "display": true
                         }
                       ]
@@ -950,7 +1530,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   },
                   {
@@ -960,7 +1540,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   }
                 ]
@@ -974,7 +1554,7 @@
                       "code": "ORDER_RECEIVED",
                       "short_desc": "ORDER RECEIVED"
                     },
-                    "updated_at": "2025-05-15T07:24:21.740Z"
+                    "updated_at": "2025-05-15T18:59:22.427Z"
                   }
                 }
               ]
@@ -987,9 +1567,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "status",
-        "timestamp": "2025-05-15T07:34:47.948Z",
-        "message_id": "d23efd4c-022f-4fe8-93fc-a76999c6ff4a",
-        "transaction_id": "2e6b31d4-726e-47b2-9574-cc9818296073",
+        "timestamp": "2025-05-15T18:59:46.579Z",
+        "message_id": "34cf5f29-dd18-4f86-9731-33f388dc37a0",
+        "transaction_id": "f6540df3-e0a8-4ccf-844e-a799072e4aeb",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -1025,37 +1605,37 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "2e6b31d4-726e-47b2-9574-cc9818296073",
-            "message_id": "d23efd4c-022f-4fe8-93fc-a76999c6ff4a",
+            "transaction_id": "f6540df3-e0a8-4ccf-844e-a799072e4aeb",
+            "message_id": "34cf5f29-dd18-4f86-9731-33f388dc37a0",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T07:34:48.100Z"
+            "timestamp": "2025-05-15T18:59:46.700Z"
           },
           "message": {
             "order": {
-              "id": "3802",
-              "created_at": "2025-05-15T07:24:21.698Z",
+              "id": "3845",
+              "created_at": "2025-05-15T18:59:22.378Z",
               "provider": {
-                "id": "334",
+                "id": "332",
                 "descriptor": {
-                  "name": "San Francisco Electric Authority",
-                  "short_desc": "Official provider for new electricity connections",
-                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
                   "additional_desc": {
-                    "url": "sf_electric_authority"
+                    "url": "beckn://solarunion.com"
                   },
                   "images": [
                     {
-                      "url": "https://sfea.gov/logo.png",
+                      "url": "https://slack-files.com/T068S9XKP9T-F08RY5N8BCL-48973e2458",
                       "size_type": "sm"
                     }
                   ]
                 },
-                "short_desc": "Official provider for new electricity connections",
+                "short_desc": "California-based solar provider",
                 "locations": [
                   {
-                    "id": "29",
-                    "gps": "37.7504,-122.4138",
-                    "address": "1320 Potrero Ave, SF",
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
                     "city": {
                       "name": "San Francisco"
                     },
@@ -1065,22 +1645,22 @@
                     "state": {
                       "name": "CA"
                     },
-                    "area_code": "94110"
+                    "area_code": "94111"
                   }
                 ],
                 "rateable": true
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "469",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
                     "images": [
                       {
-                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
+                        "url": "https://logo.com",
                         "size_type": "sm"
                       }
                     ]
@@ -1088,17 +1668,17 @@
                   "rating": "null",
                   "rateable": true,
                   "location_ids": [
-                    "29"
+                    "32"
                   ],
                   "price": {
-                    "value": "80",
+                    "value": "7000",
                     "currency": "USD"
                   },
                   "quantity": {
                     "available": {
-                      "count": 20,
+                      "count": 5,
                       "measure": {
-                        "value": "20"
+                        "value": "5"
                       }
                     },
                     "selected": {
@@ -1106,7 +1686,7 @@
                     }
                   },
                   "category_ids": [
-                    "44"
+                    "43"
                   ],
                   "fulfillment_ids": [
                     "617"
@@ -1114,22 +1694,22 @@
                 }
               ],
               "price": {
-                "value": "80",
+                "value": "7000",
                 "currency": "USD"
               },
               "fulfillments": [
                 {
-                  "id": "3",
+                  "id": "617",
                   "state": {
                     "descriptor": {
                       "code": "ORDER_RECEIVED",
-                      "short_desc": "ORDER DELIVERED"
+                      "short_desc": "ORDER RECEIVED"
                     },
-                    "updated_at": "2025-05-15T07:27:36.894Z"
+                    "updated_at": "2025-05-15T18:59:22.427Z"
                   },
                   "customer": {
                     "contact": {
-                      "email": "saks@gmail.com",
+                      "email": "s@x.com",
                       "phone": "123456789"
                     },
                     "person": {
@@ -1146,7 +1726,7 @@
                       "name": " "
                     }
                   },
-                  "rating": "4.3",
+                  "rating": "null",
                   "rateable": true
                 }
               ],
@@ -1163,7 +1743,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   },
                   {
@@ -1173,7 +1753,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "469"
                     }
                   }
                 ]

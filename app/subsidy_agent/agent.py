@@ -4,7 +4,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 
 from typing import Dict
 import json
-import logging
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
@@ -12,24 +11,11 @@ from app.prompt_book.subsidy_agent_prompt import SUBSIDY_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
 from app.beckn_apis.subsidy_client import SubsidyClient
 from app.models import GEMINI_2_5_FLASH
+from app.utils.logging_config import get_logger
+from app.utils.progress_tracker import update_progress_by_handler
 
-# Configure simple progress logger
-progress_logger = logging.getLogger('progress')
-progress_logger.setLevel(logging.INFO)
-
-# Create logs directory if it doesn't exist
-os.makedirs('logs', exist_ok=True)
-
-# Create file handler for progress logs
-progress_handler = logging.FileHandler('logs/progress.log')
-progress_handler.setLevel(logging.INFO)
-
-# Create simple formatter
-formatter = logging.Formatter('%(asctime)s - %(message)s')
-progress_handler.setFormatter(formatter)
-
-# Add handler to logger
-progress_logger.addHandler(progress_handler)
+# Get logger for this module
+logger = get_logger('Subsidy')
 
 client = SubsidyClient()
 
@@ -55,13 +41,18 @@ def _save_context_store(step: str):
     with open(filename, 'w') as f:
         json.dump(state, f, indent=2)
 
+    logger.info("Step - Context store saved")
+
 
 def _handle_search() -> Dict:
     """
     Search for available subsidies based on the user's context.
     Uses information from previous stages to find applicable subsidies.
     """
-    progress_logger.info("[SUBSIDY]:Step 1/3: Search")
+    logger.info("Step Search - Starting operation")
+
+    # Update progress tracker for this step
+    update_progress_by_handler("subsidy", "search")
 
     # Get solar and service details to determine subsidy eligibility
     solar_details = context_store.get_solar_details()
@@ -71,6 +62,8 @@ def _handle_search() -> Dict:
     response = client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
+
+    logger.info("Step Search - Operation completed")
     return response
 
 
@@ -93,9 +86,13 @@ def _handle_confirm(
         customer_phone (str): Primary contact phone number
         customer_email (str): Customer's email address
     """
-    progress_logger.info("[SUBSIDY]:Step 2/3: Confirm")
+    logger.info("Step Confirm - Starting operation for customer %s", customer_name)
+
+    # Update progress tracker for this step
+    update_progress_by_handler("subsidy", "confirm")
 
     if not context_store.get_transaction_history().get('init'):
+        logger.error("Step Confirm - Failed: Initialization must be done before confirmation")
         raise Exception('Initialization must be done before confirmation')
 
     # Update subsidy details in context
@@ -118,6 +115,8 @@ def _handle_confirm(
     )
     context_store.add_transaction_history('confirm', response)
     _save_context_store('confirm')
+
+    logger.info("Step Confirm - Operation completed")
     return response
 
 
@@ -128,17 +127,23 @@ def _handle_status(order_id: str) -> Dict:
     Args:
         order_id (str): The order ID obtained from init response
     """
-    progress_logger.info("[SUBSIDY]:Step 3/3: Status Check")
+    logger.info("Step Status - Starting check for order %s", order_id)
+
+    # Update progress tracker for this step
+    update_progress_by_handler("subsidy", "status")
 
     if not context_store.get_transaction_history().get('confirm'):
+        logger.error("Step Status - Failed: Confirmation must be done before status check")
         raise Exception('Confirmation must be done before status check')
 
     # Update subsidy details with order ID
     context_store.update_subsidy_details(order_id=order_id)
-    
+
     response = client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
+
+    logger.info("Step Status - Operation completed")
     return response
 
 
@@ -161,3 +166,5 @@ root_agent = Agent(
         ),
     ],
 )
+
+logger.info("Agent initialized with %d tools", len(root_agent.tools))
