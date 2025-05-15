@@ -11,7 +11,7 @@ from google.adk.tools import FunctionTool
 from app.prompt_book.connection_agent_prompt import CONNECTION_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
 from app.beckn_apis.beckn_client import BAPClient
-
+from app.models import GEMINI_2_5_FLASH
 
 # Configure simple progress logger
 progress_logger = logging.getLogger('progress')
@@ -205,8 +205,8 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="ruchir_connection_agent",
-    model="gemini-1.5-flash",
+    name="connection_agent",
+    model=GEMINI_2_5_FLASH,
     instruction=CONNECTION_AGENT_SYSTEM_PROMPT,
     tools=[
         FunctionTool(

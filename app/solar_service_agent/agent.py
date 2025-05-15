@@ -8,7 +8,7 @@ import logging
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
-from app.prompt_book.solar_retail_agent_prompt import SOLAR_RETAIL_AGENT_SYSTEM_PROMPT
+from app.prompt_book.solar_service_agent_prompt import SOLAR_SERVICE_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
 from app.beckn_apis.beckn_client import BAPClient
 import app.models 
@@ -205,9 +205,9 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="ruchir_solar_retail_agent",
-    model=app.models.GEMINI_1_5_FLASH,
-    instruction=SOLAR_RETAIL_AGENT_SYSTEM_PROMPT,
+    name="solar_service_agent",
+    model=app.models.GEMINI_2_5_FLASH,
+    instruction=SOLAR_SERVICE_AGENT_SYSTEM_PROMPT,
     tools=[
         FunctionTool(
             func=_handle_search,

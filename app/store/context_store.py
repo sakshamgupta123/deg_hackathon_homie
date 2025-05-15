@@ -25,7 +25,51 @@ class ContextStore:
                 'provider_id': None,
                 'item_id': None,
                 'selection_id': None,
-                'transaction_id': None
+                'transaction_id': None,
+                'fulfillment_id': None,
+                'customer_name': None,
+                'customer_phone': None,
+                'customer_email': None,
+                'order_id': None
+            },
+            'solar_details': {
+                'provider_id': None,
+                'item_id': None,
+                'selection_id': None,
+                'transaction_id': None,
+                'fulfillment_id': None,
+                'customer_name': None,
+                'customer_phone': None,
+                'customer_email': None,
+                'order_id': None,
+                'system_size': None,
+                'installation_type': None
+            },
+            'service_details': {
+                'provider_id': None,
+                'item_id': None,
+                'selection_id': None,
+                'transaction_id': None,
+                'fulfillment_id': None,
+                'customer_name': None,
+                'customer_phone': None,
+                'customer_email': None,
+                'order_id': None,
+                'installation_date': None,
+                'installation_address': None
+            },
+            'subsidy_details': {
+                'provider_id': None,
+                'item_id': None,
+                'selection_id': None,
+                'transaction_id': None,
+                'fulfillment_id': None,
+                'customer_name': None,
+                'customer_phone': None,
+                'customer_email': None,
+                'order_id': None,
+                'subsidy_type': None,
+                'subsidy_amount': None
             },
             'transaction_history': {}
         }
@@ -37,6 +81,18 @@ class ContextStore:
     def update_connection_details(self, **kwargs) -> None:
         """Update connection details in the context"""
         self.context['connection_details'].update(kwargs)
+
+    def update_solar_details(self, **kwargs) -> None:
+        """Update solar details in the context"""
+        self.context['solar_details'].update(kwargs)
+
+    def update_service_details(self, **kwargs) -> None:
+        """Update service details in the context"""
+        self.context['service_details'].update(kwargs)
+
+    def update_subsidy_details(self, **kwargs) -> None:
+        """Update subsidy details in the context"""
+        self.context['subsidy_details'].update(kwargs)
 
     def add_transaction_history(self, action: str, data: Dict) -> None:
         """Add transaction data to history"""
@@ -50,9 +106,51 @@ class ContextStore:
         """Get all connection details"""
         return self.context['connection_details']
 
+    def get_solar_details(self) -> Dict:
+        """Get all solar details"""
+        return self.context['solar_details']
+
+    def get_service_details(self) -> Dict:
+        """Get all service details"""
+        return self.context['service_details']
+
+    def get_subsidy_details(self) -> Dict:
+        """Get all subsidy details"""
+        return self.context['subsidy_details']
+
     def get_transaction_history(self) -> Dict:
         """Get complete transaction history"""
         return self.context['transaction_history']
+
+    def get_order_id(self, agent_type: str) -> Optional[str]:
+        """Get order ID for a specific agent type"""
+        details_map = {
+            'connection': 'connection_details',
+            'solar': 'solar_details',
+            'service': 'service_details',
+            'subsidy': 'subsidy_details'
+        }
+        if agent_type not in details_map:
+            raise ValueError(f"Invalid agent type: {agent_type}")
+        return self.context[details_map[agent_type]].get('order_id')
+
+    def copy_user_details_to_agent(self, agent_type: str) -> None:
+        """Copy user details to a specific agent's details"""
+        details_map = {
+            'connection': 'connection_details',
+            'solar': 'solar_details',
+            'service': 'service_details',
+            'subsidy': 'subsidy_details'
+        }
+        if agent_type not in details_map:
+            raise ValueError(f"Invalid agent type: {agent_type}")
+        
+        user_details = self.get_user_details()
+        self.context[details_map[agent_type]].update({
+            'customer_name': user_details.get('name'),
+            'customer_phone': user_details.get('phone'),
+            'customer_email': user_details.get('email')
+        })
 
     def get_value(self, key: str, subkey: Optional[str] = None) -> Any:
         """Get a specific value from the context"""

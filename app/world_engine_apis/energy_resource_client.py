@@ -119,18 +119,18 @@ if __name__ == "__main__":
     # Initialize client
     client = EnergyResourceClient()
     
-    # # Create a new energy resource
-    # create_response = client.create_energy_resource(
-    #     name="Saksham's Home",
-    #     type="CONSUMER",
-    #     meter_id=1832
-    # )
-    # print("Created energy resource:", create_response)
-    # id = create_response['data']['id']
-    # # Get specific energy resource
-    # resource = client.get_energy_resource_by_id(id)
-    # print("Specific energy resource:", resource)
+    # Create a new energy resource
+    create_response = client.create_energy_resource(
+        name="Saksham's Home2",
+        type="CONSUMER",
+        meter_id=1832
+    )
+    print("Created energy resource:", create_response)
+    id = create_response['data']['id']
+    # Get specific energy resource
+    resource = client.get_energy_resource_by_id(id)
+    print("Specific energy resource:", resource)
     
-    # Delete energy resource
-    delete_response = client.delete_energy_resource(2228)
-    print("Delete response:", delete_response) 
+    # # Delete energy resource
+    # delete_response = client.delete_energy_resource(2228)
+    # print("Delete response:", delete_response) 

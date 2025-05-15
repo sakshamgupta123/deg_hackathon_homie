@@ -8,10 +8,10 @@ import logging
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
-from app.prompt_book.solar_retail_agent_prompt import SOLAR_RETAIL_AGENT_SYSTEM_PROMPT
+from app.prompt_book.subsidy_agent_prompt import SUBSIDY_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
-from app.beckn_apis.beckn_client import BAPClient
-import app.models 
+from app.beckn_apis.subsidy_client import SubsidyClient
+from app.models import GEMINI_2_5_FLASH
 
 # Configure simple progress logger
 progress_logger = logging.getLogger('progress')
@@ -31,7 +31,7 @@ progress_handler.setFormatter(formatter)
 # Add handler to logger
 progress_logger.addHandler(progress_handler)
 
-client = BAPClient(domain="retail")              
+client = SubsidyClient()
 
 
 def _save_context_store(step: str):
@@ -58,79 +58,19 @@ def _save_context_store(step: str):
 
 def _handle_search() -> Dict:
     """
-    Search for available solar products and services.
-    No parameters required as search is performed with default configurations.
+    Search for available subsidies based on the user's context.
+    Uses information from previous stages to find applicable subsidies.
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 1/5: Search")
+    progress_logger.info("[SUBSIDY]:Step 1/3: Search")
 
-    # Update context with search parameters
-    context_store.update_connection_details()
-    context_store.update_user_details()
+    # Get solar and service details to determine subsidy eligibility
+    solar_details = context_store.get_solar_details()
+    service_details = context_store.get_service_details()
 
+    # Use the information to search for applicable subsidies
     response = client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
-    return response
-
-
-def _handle_select(provider_id: str, item_id: str) -> Dict:
-    """
-    Select a specific solar product or service from a provider.
-
-    Args:
-        provider_id (str): ID of the selected provider
-        item_id (str): ID of the selected solar product or service
-    """
-    progress_logger.info("[SOLAR_RETAIL]:Step 2/5: Select")
-
-    if not context_store.get_transaction_history().get('search'):
-        raise Exception('Search must be performed before selection')
-
-    if not provider_id or not item_id:
-        raise Exception('Provider ID and Item ID are required')
-
-    # Update context with selection details
-    context_store.update_connection_details(
-        provider_id=provider_id,
-        item_id=item_id
-    )
-
-    response = client.select(
-        provider_id=provider_id,
-        item_id=item_id
-    )
-    context_store.add_transaction_history('select', response)
-    _save_context_store('select')
-    return response
-
-
-def _handle_init(provider_id: str, item_id: str) -> Dict:
-    """
-    Initialize the solar product/service purchase process.
-
-    Args:
-        provider_id (str): ID of the selected provider
-        item_id (str): ID of the selected solar product or service
-    """
-    progress_logger.info("[SOLAR_RETAIL]:Step 3/5: Initialize")
-
-    if not context_store.get_transaction_history().get('select'):
-        raise Exception('Selection must be made before initialization')
-
-    init_data = {
-        'provider_id': provider_id,
-        'item_id': item_id
-    }
-
-    # Update user details in context
-    context_store.update_user_details(**init_data)
-
-    response = client.init(
-        provider_id=provider_id,
-        item_id=item_id
-    )
-    context_store.add_transaction_history('init', response)
-    _save_context_store('init')
     return response
 
 
@@ -143,22 +83,23 @@ def _handle_confirm(
     customer_email: str
 ) -> Dict:
     """
-    Confirm the solar product/service purchase with customer details.
+    Automatically confirm the subsidy application using information from previous stages.
 
     Args:
-        provider_id (str): ID of the selected provider
-        item_id (str): ID of the selected solar product or service
+        provider_id (str): ID of the subsidy provider
+        item_id (str): ID of the specific subsidy
         fulfillment_id (str): ID of the fulfillment from init response
-        customer_name (str): Full name of the person making the purchase
+        customer_name (str): Full name of the person applying for subsidy
         customer_phone (str): Primary contact phone number
         customer_email (str): Customer's email address
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 4/5: Confirm")
+    progress_logger.info("[SUBSIDY]:Step 2/3: Confirm")
 
     if not context_store.get_transaction_history().get('init'):
         raise Exception('Initialization must be done before confirmation')
 
-    context_store.update_connection_details(
+    # Update subsidy details in context
+    context_store.update_subsidy_details(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=fulfillment_id,
@@ -182,19 +123,19 @@ def _handle_confirm(
 
 def _handle_status(order_id: str) -> Dict:
     """
-    Check the status of a solar product/service purchase.
+    Check the status of a subsidy application.
 
     Args:
         order_id (str): The order ID obtained from init response
     """
-    progress_logger.info("[SOLAR_RETAIL]:Step 5/5: Status Check")
+    progress_logger.info("[SUBSIDY]:Step 3/3: Status Check")
 
     if not context_store.get_transaction_history().get('confirm'):
         raise Exception('Confirmation must be done before status check')
 
-    context_store.update_connection_details(
-        order_id=order_id
-    )
+    # Update subsidy details with order ID
+    context_store.update_subsidy_details(order_id=order_id)
+    
     response = client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
@@ -205,18 +146,12 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="solar_retail_agent",
-    model=app.models.GEMINI_2_5_FLASH,
-    instruction=SOLAR_RETAIL_AGENT_SYSTEM_PROMPT,
+    name="subsidy_agent",
+    model=GEMINI_2_5_FLASH,
+    instruction=SUBSIDY_AGENT_SYSTEM_PROMPT,
     tools=[
         FunctionTool(
             func=_handle_search,
-        ),
-        FunctionTool(
-            func=_handle_select,
-        ),
-        FunctionTool(
-            func=_handle_init,
         ),
         FunctionTool(
             func=_handle_confirm,

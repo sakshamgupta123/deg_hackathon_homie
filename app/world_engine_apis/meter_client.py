@@ -194,28 +194,28 @@ if __name__ == "__main__":
     
     # Create a new meter
     create_response = client.create_meter(
-        code="METER201",
+        code="METER202",
         energy_resource="2105"
     )
     print("Created meter:", create_response)
     
-    # Get all meters in one request (handles pagination automatically)
-    all_meters = client.get_all_meters()
-    # dump to file
-    with open("all_meters.json", "w") as f:
-        json.dump(all_meters, f)
-    print(f"Total meters retrieved: {len(all_meters)}")
+    # # Get all meters in one request (handles pagination automatically)
+    # all_meters = client.get_all_meters()
+    # # dump to file
+    # with open("all_meters.json", "w") as f:
+    #     json.dump(all_meters, f)
+    # print(f"Total meters retrieved: {len(all_meters)}")
     
-    # Get specific meter
-    meter = client.get_meter_by_id(1833)
-    print("Specific meter:", meter)
+    # # Get specific meter
+    # meter = client.get_meter_by_id(1833)
+    # print("Specific meter:", meter)
     
-    # Get historical data
-    historical_data = client.get_meter_historical_data(1682)
-    print("Historical data:", historical_data)
-    # dump to file
-    with open("historical_data.json", "w") as f:
-        json.dump(historical_data, f)
-    # Delete meter
-    delete_response = client.delete_meter(1833)
-    print("Delete response:", delete_response) 
+    # # Get historical data
+    # historical_data = client.get_meter_historical_data(1682)
+    # print("Historical data:", historical_data)
+    # # dump to file
+    # with open("historical_data.json", "w") as f:
+    #     json.dump(historical_data, f)
+    # # Delete meter
+    # delete_response = client.delete_meter(1833)
+    # print("Delete response:", delete_response) 
