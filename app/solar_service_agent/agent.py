@@ -47,11 +47,11 @@ def _save_context_store(step: str):
 
 def _handle_search() -> Dict:
     """
-    Search for electricity connection providers
-
-    Args:
-        location: Location to search in
-        connection_type: Type of connection (Residential/Commercial)
+    Search for available solar installation services.
+    No parameters required as search is performed with default configurations.
+    
+    Returns:
+        Dict: Response containing available solar installation services
     """
     logger.info("Step Search - Starting operation")
 
@@ -72,12 +72,17 @@ def _handle_search() -> Dict:
 
 def _handle_select(provider_id: str, item_id: str) -> Dict:
     """
-    Select a specific provider and plan
+    Select a specific solar installation service provider.
 
     Args:
-        provider_id: ID of the selected provider
-        item_id: ID of the selected plan
-        connection_type: Optional connection type (will use from context if not provided)
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected installation service
+
+    Returns:
+        Dict: Response containing details of the selected service
+
+    Raises:
+        Exception: If search hasn't been performed or if provider_id/item_id are missing
     """
     logger.info("Step Select - Starting operation for provider %s, item %s", provider_id, item_id)
 
@@ -111,7 +116,17 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
 
 def _handle_init(provider_id: str, item_id: str) -> Dict:
     """
-    Initialize connection request with customer details
+    Initialize the solar installation service request.
+
+    Args:
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected installation service
+
+    Returns:
+        Dict: Response containing initialization details including fulfillment_id
+
+    Raises:
+        Exception: If selection hasn't been made
     """
     logger.info("Step Init - Starting operation for provider %s, item %s", provider_id, item_id)
 
@@ -150,7 +165,21 @@ def _handle_confirm(
     customer_email: str
 ) -> Dict:
     """
-    Confirm connection request with payment details
+    Confirm the solar installation service request with customer details.
+
+    Args:
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected installation service
+        fulfillment_id (str): ID of the fulfillment from init response
+        customer_name (str): Full name of the person requesting installation
+        customer_phone (str): Primary contact phone number
+        customer_email (str): Customer's email address
+
+    Returns:
+        Dict: Response containing confirmation details including order_id
+
+    Raises:
+        Exception: If initialization hasn't been done
     """
     logger.info("Step Confirm - Starting operation for customer %s", customer_name)
 
@@ -187,10 +216,16 @@ def _handle_confirm(
 
 def _handle_status(order_id: str) -> Dict:
     """
-    Check status of a connection request
+    Check the status of a solar installation service request.
 
     Args:
-        transaction_id: Optional transaction ID (will use from context if not provided)
+        order_id (str): The order ID obtained from confirm response
+
+    Returns:
+        Dict: Response containing current status of the installation request
+
+    Raises:
+        Exception: If confirmation hasn't been done
     """
     logger.info("Step Status - Starting check for order %s", order_id)
 

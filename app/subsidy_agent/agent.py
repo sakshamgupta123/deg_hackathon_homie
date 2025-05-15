@@ -48,6 +48,9 @@ def _handle_search() -> Dict:
     """
     Search for available subsidies based on the user's context.
     Uses information from previous stages to find applicable subsidies.
+    
+    Returns:
+        Dict: Response containing available subsidies matching the user's context
     """
     logger.info("Step Search - Starting operation")
 
@@ -85,6 +88,12 @@ def _handle_confirm(
         customer_name (str): Full name of the person applying for subsidy
         customer_phone (str): Primary contact phone number
         customer_email (str): Customer's email address
+
+    Returns:
+        Dict: Response containing confirmation details including order_id
+
+    Raises:
+        Exception: If initialization hasn't been done
     """
     logger.info("Step Confirm - Starting operation for customer %s", customer_name)
 
@@ -125,7 +134,13 @@ def _handle_status(order_id: str) -> Dict:
     Check the status of a subsidy application.
 
     Args:
-        order_id (str): The order ID obtained from init response
+        order_id (str): The order ID obtained from confirm response
+
+    Returns:
+        Dict: Response containing current status of the subsidy application
+
+    Raises:
+        Exception: If confirmation hasn't been done
     """
     logger.info("Step Status - Starting check for order %s", order_id)
 

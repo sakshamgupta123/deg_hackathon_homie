@@ -49,6 +49,9 @@ def _handle_search() -> Dict:
     """
     Search for available solar products and services.
     No parameters required as search is performed with default configurations.
+    
+    Returns:
+        Dict: Response containing available solar products and services
     """
     logger.info("Step Search - Starting operation")
 
@@ -74,6 +77,12 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
     Args:
         provider_id (str): ID of the selected provider
         item_id (str): ID of the selected solar product or service
+
+    Returns:
+        Dict: Response containing details of the selected product/service
+
+    Raises:
+        Exception: If search hasn't been performed or if provider_id/item_id are missing
     """
     logger.info("Step Select - Starting operation for provider %s, item %s", provider_id, item_id)
 
@@ -112,6 +121,12 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
     Args:
         provider_id (str): ID of the selected provider
         item_id (str): ID of the selected solar product or service
+
+    Returns:
+        Dict: Response containing initialization details including fulfillment_id
+
+    Raises:
+        Exception: If selection hasn't been made
     """
     logger.info("Step Init - Starting operation for provider %s, item %s", provider_id, item_id)
 
@@ -159,6 +174,12 @@ def _handle_confirm(
         customer_name (str): Full name of the person making the purchase
         customer_phone (str): Primary contact phone number
         customer_email (str): Customer's email address
+
+    Returns:
+        Dict: Response containing confirmation details including order_id
+
+    Raises:
+        Exception: If initialization hasn't been done
     """
     logger.info("Step Confirm - Starting operation for customer %s", customer_name)
 
@@ -198,7 +219,13 @@ def _handle_status(order_id: str) -> Dict:
     Check the status of a solar product/service purchase.
 
     Args:
-        order_id (str): The order ID obtained from init response
+        order_id (str): The order ID obtained from confirm response
+
+    Returns:
+        Dict: Response containing current status of the purchase
+
+    Raises:
+        Exception: If confirmation hasn't been done
     """
     logger.info("Step Status - Starting check for order %s", order_id)
 

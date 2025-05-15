@@ -1,0 +1,1123 @@
+{
+  "connection_details": {
+    "connection_type": null,
+    "provider_id": "332",
+    "item_id": "469",
+    "selection_id": null,
+    "transaction_id": null,
+    "fulfillment_id": "617",
+    "customer_name": "saksham gupta",
+    "customer_phone": "1111111111",
+    "customer_email": "s@x.com",
+    "order_id": "3839"
+  },
+  "user_details": {
+    "name": null,
+    "location": null,
+    "address": null,
+    "phone": null,
+    "email": null,
+    "provider_id": "332",
+    "item_id": "469"
+  },
+  "transaction_history": {
+    "search": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "search",
+        "timestamp": "2025-05-15T18:28:51.388Z",
+        "message_id": "ad4d0e83-95dc-4cda-8257-bc116856e8c6",
+        "transaction_id": "5182b194-c9ef-41b1-9b04-5adabad65fc1",
+        "domain": "deg:schemes",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:schemes",
+            "action": "on_search",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "5182b194-c9ef-41b1-9b04-5adabad65fc1",
+            "message_id": "ad4d0e83-95dc-4cda-8257-bc116856e8c6",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:28:51.874Z"
+          },
+          "message": {
+            "catalog": {
+              "descriptor": {
+                "name": "UrjaKart",
+                "code": "UrjaKart",
+                "short_desc": "A seller platform for energy solutions, enabling seamless transactions of batteries, solar panels, and other renewable energy products."
+              },
+              "providers": [
+                {
+                  "id": "335",
+                  "descriptor": {
+                    "name": "SF Department of Energy Support",
+                    "short_desc": "State incentives for clean energy adoption",
+                    "long_desc": "Provides incentives, rebates, and support programs for residents installing solar panels, as part of San Francisco's clean energy transition goals.",
+                    "additional_desc": {
+                      "url": "sf_energy_office"
+                    },
+                    "images": [
+                      {
+                        "url": "https://sfea.gov/logo.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "short_desc": "State incentives for clean energy adoption",
+                  "fulfillments": [
+                    {
+                      "id": "616",
+                      "type": "DIGITAL",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "29",
+                      "gps": "37.7504,-122.4138",
+                      "address": "1320 Potrero Ave, SF",
+                      "city": {
+                        "name": "San Francisco"
+                      },
+                      "country": {
+                        "name": "United States"
+                      },
+                      "state": {
+                        "name": "CA"
+                      },
+                      "area_code": "94110"
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "474",
+                      "descriptor": {
+                        "name": "Smart EV Charger Load-Balancing Incentive",
+                        "code": "Smart EV Charger Load-Balancing Incentive",
+                        "short_desc": "Incentive for smart charger installations that support grid load-balancing",
+                        "long_desc": "Incentive for smart charger installations that support grid load-balancing",
+                        "images": [
+                          {
+                            "url": "https://cdn4.iconfinder.com/data/icons/doodle-3/168/saving-512.png"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "0",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "category_ids": [
+                        "42"
+                      ],
+                      "fulfillment_ids": [
+                        "616"
+                      ],
+                      "location_ids": [
+                        "29"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "subsidy_program_details",
+                            "code": "subsidy_program_details"
+                          },
+                          "list": [
+                            {
+                              "value": "Load-Balancing Rebate",
+                              "descriptor": {
+                                "code": "subsidy_type",
+                                "name": "subsidy_type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "eligibility_criteria",
+                            "code": "eligibility_criteria"
+                          },
+                          "list": [
+                            {
+                              "value": "500",
+                              "descriptor": {
+                                "code": "max_subsidy_amount_usd",
+                                "name": "max_subsidy_amount_usd"
+                              },
+                              "display": true
+                            },
+                            {
+                              "value": "Auto-applied upon installation",
+                              "descriptor": {
+                                "code": "application_mode",
+                                "name": "application_mode"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "select": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "select",
+        "timestamp": "2025-05-15T18:27:29.762Z",
+        "message_id": "ca19d98a-4ace-4654-bfaa-7ab527c9c7fe",
+        "transaction_id": "bc00f1bd-c3c1-4566-8027-9391126dd45f",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_select",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "bc00f1bd-c3c1-4566-8027-9391126dd45f",
+            "message_id": "ca19d98a-4ace-4654-bfaa-7ab527c9c7fe",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:27:30.345Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "332",
+                "descriptor": {
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
+                  "additional_desc": {
+                    "url": "beckn://solarunion.com"
+                  },
+                  "images": [
+                    {
+                      "url": "https://logo.com",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "locations": [
+                  {
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94111"
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  },
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "469",
+                  "descriptor": {
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
+                    "images": [
+                      {
+                        "url": "https://logo.com",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "location_ids": [
+                    "32"
+                  ],
+                  "price": {
+                    "value": "7000",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 5,
+                      "measure": {
+                        "value": "5"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "category_ids": [
+                    "43"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "description": "system_specification",
+                        "code": "system_specification"
+                      },
+                      "list": [
+                        {
+                          "value": "4KW",
+                          "descriptor": {
+                            "code": "system_capacity",
+                            "name": "system capacity"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "installation_context",
+                        "code": "installation_context"
+                      },
+                      "list": [
+                        {
+                          "value": "Residential",
+                          "descriptor": {
+                            "code": "property_type",
+                            "name": "property type"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "financial_details",
+                        "code": "financial_details"
+                      },
+                      "list": [
+                        {
+                          "value": "TRUE",
+                          "descriptor": {
+                            "code": "financial_assistance",
+                            "name": "financial assistance"
+                          },
+                          "display": true
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "7000",
+                  "currency": "USD"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "type": "SITE_VISIT",
+                  "rateable": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "init": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "init",
+        "timestamp": "2025-05-15T18:27:38.298Z",
+        "message_id": "617bdda6-8544-401e-b53c-8f1b3dcd8fc0",
+        "transaction_id": "9966baca-7cdf-4374-8c1f-b4864c1ae8e5",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_init",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "9966baca-7cdf-4374-8c1f-b4864c1ae8e5",
+            "message_id": "617bdda6-8544-401e-b53c-8f1b3dcd8fc0",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:27:38.869Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "332",
+                "descriptor": {
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
+                  "additional_desc": {
+                    "url": "beckn://solarunion.com"
+                  },
+                  "images": [
+                    {
+                      "url": "https://logo.com",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "short_desc": "California-based solar provider",
+                "fulfillments": [
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  },
+                  {
+                    "id": "617",
+                    "type": "SITE_VISIT",
+                    "rateable": true
+                  }
+                ],
+                "locations": [
+                  {
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94111"
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "469",
+                  "descriptor": {
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
+                    "images": [
+                      {
+                        "url": "https://logo.com",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "price": {
+                    "value": "7000",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 5,
+                      "measure": {
+                        "value": "5"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "category_ids": [
+                    "43"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ],
+                  "location_ids": [
+                    "32"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "description": "system_specification",
+                        "code": "system_specification"
+                      },
+                      "list": [
+                        {
+                          "value": "4KW",
+                          "descriptor": {
+                            "code": "system_capacity",
+                            "name": "system capacity"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "installation_context",
+                        "code": "installation_context"
+                      },
+                      "list": [
+                        {
+                          "value": "Residential",
+                          "descriptor": {
+                            "code": "property_type",
+                            "name": "property type"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "financial_details",
+                        "code": "financial_details"
+                      },
+                      "list": [
+                        {
+                          "value": "TRUE",
+                          "descriptor": {
+                            "code": "financial_assistance",
+                            "name": "financial assistance"
+                          },
+                          "display": true
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "7000",
+                  "currency": "USD"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "type": "SITE_VISIT",
+                  "rateable": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "confirm": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "confirm",
+        "timestamp": "2025-05-15T18:28:59.416Z",
+        "message_id": "640153c7-465f-4e84-bd8f-d038f50473fe",
+        "transaction_id": "69549046-4f85-4e6d-9ea6-bd4dc9824082",
+        "domain": "deg:schemes",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:schemes",
+            "action": "on_confirm",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "69549046-4f85-4e6d-9ea6-bd4dc9824082",
+            "message_id": "640153c7-465f-4e84-bd8f-d038f50473fe",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:29:00.500Z"
+          },
+          "message": {
+            "order": {
+              "id": "3840",
+              "provider": {
+                "id": "335",
+                "descriptor": {
+                  "name": "SF Department of Energy Support",
+                  "short_desc": "State incentives for clean energy adoption",
+                  "long_desc": "Provides incentives, rebates, and support programs for residents installing solar panels, as part of San Francisco's clean energy transition goals.",
+                  "additional_desc": {
+                    "url": "sf_energy_office"
+                  },
+                  "images": [
+                    {
+                      "url": "https://cdn4.iconfinder.com/data/icons/doodle-3/168/saving-512.png",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "short_desc": "State incentives for clean energy adoption",
+                "locations": [
+                  {
+                    "id": "29",
+                    "gps": "37.7504,-122.4138",
+                    "address": "1320 Potrero Ave, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94110"
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "616",
+                    "type": "DIGITAL",
+                    "rateable": true,
+                    "state": {
+                      "description": "ORDER RECEIVED",
+                      "descriptor": {
+                        "name": "ORDER RECEIVED"
+                      }
+                    }
+                  },
+                  {
+                    "id": "616",
+                    "type": "DIGITAL",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "474",
+                  "descriptor": {
+                    "name": "Smart EV Charger Load-Balancing Incentive",
+                    "code": "Smart EV Charger Load-Balancing Incentive",
+                    "short_desc": "Incentive for smart charger installations that support grid load-balancing",
+                    "long_desc": "Incentive for smart charger installations that support grid load-balancing",
+                    "images": [
+                      {
+                        "url": "https://cdn4.iconfinder.com/data/icons/doodle-3/168/saving-512.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "price": {
+                    "value": "0",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 1,
+                      "measure": {
+                        "value": "1"
+                      }
+                    },
+                    "selected": {
+                      "count": 1,
+                      "measure": {
+                        "value": "1"
+                      }
+                    }
+                  },
+                  "category_ids": [
+                    "42"
+                  ],
+                  "fulfillment_ids": [
+                    "616"
+                  ],
+                  "location_ids": [
+                    "29"
+                  ],
+                  "tags": [
+                    {
+                      "display": true,
+                      "descriptor": {
+                        "description": "subsidy_program_details"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "description": "subsidy_type",
+                            "code": "subsidy_type"
+                          },
+                          "value": "Load-Balancing Rebate",
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "display": true,
+                      "descriptor": {
+                        "description": "eligibility_criteria"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "description": "max_subsidy_amount_usd",
+                            "code": "max_subsidy_amount_usd"
+                          },
+                          "value": "500",
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "display": true,
+                      "descriptor": {
+                        "description": "eligibility_criteria"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "description": "application_mode",
+                            "code": "application_mode"
+                          },
+                          "value": "Auto-applied upon installation",
+                          "display": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "0"
+                    },
+                    "item": {
+                      "id": "474"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "0"
+                    },
+                    "item": {
+                      "id": "474"
+                    }
+                  }
+                ]
+              },
+              "fulfillments": [
+                {
+                  "id": "616",
+                  "type": "DIGITAL",
+                  "state": {
+                    "descriptor": {
+                      "code": "ORDER_RECEIVED",
+                      "short_desc": "ORDER RECEIVED"
+                    },
+                    "updated_at": "2025-05-15T18:29:00.386Z"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "status": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "status",
+        "timestamp": "2025-05-15T18:28:34.430Z",
+        "message_id": "329e2386-d839-41da-b0e6-991d9326937e",
+        "transaction_id": "658d2c75-b56e-4a24-a8db-6d7651aa4fea",
+        "domain": "deg:service",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:service",
+            "action": "on_status",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "658d2c75-b56e-4a24-a8db-6d7651aa4fea",
+            "message_id": "329e2386-d839-41da-b0e6-991d9326937e",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T18:28:34.619Z"
+          },
+          "message": {
+            "order": {
+              "id": "3839",
+              "created_at": "2025-05-15T18:27:52.832Z",
+              "provider": {
+                "id": "332",
+                "descriptor": {
+                  "name": "SolarUnion",
+                  "short_desc": "California-based solar provider",
+                  "long_desc": "SolarUnion designs, installs, and maintains solar systems for residential and commercial properties with a focus on long-term energy savings.",
+                  "additional_desc": {
+                    "url": "beckn://solarunion.com"
+                  },
+                  "images": [
+                    {
+                      "url": "https://slack-files.com/T068S9XKP9T-F08RY5N8BCL-48973e2458",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "short_desc": "California-based solar provider",
+                "locations": [
+                  {
+                    "id": "32",
+                    "gps": "37.7935,-122.3988",
+                    "address": "50 California St, SF",
+                    "city": {
+                      "name": "San Francisco"
+                    },
+                    "country": {
+                      "name": "United States"
+                    },
+                    "state": {
+                      "name": "CA"
+                    },
+                    "area_code": "94111"
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "469",
+                  "descriptor": {
+                    "name": "sp-resi-004",
+                    "code": "sp-resi-004",
+                    "short_desc": "4kW solar panel system for high-usage homes",
+                    "long_desc": "A 4kW solar panel system ideal for larger homes with high electricity usage. Provides faster ROI and includes premium installation, documentation assistance, and financial consultation",
+                    "images": [
+                      {
+                        "url": "https://logo.com",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "null",
+                  "rateable": true,
+                  "location_ids": [
+                    "32"
+                  ],
+                  "price": {
+                    "value": "7000",
+                    "currency": "USD"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 5,
+                      "measure": {
+                        "value": "5"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "category_ids": [
+                    "43"
+                  ],
+                  "fulfillment_ids": [
+                    "617"
+                  ]
+                }
+              ],
+              "price": {
+                "value": "7000",
+                "currency": "USD"
+              },
+              "fulfillments": [
+                {
+                  "id": "617",
+                  "state": {
+                    "descriptor": {
+                      "code": "ORDER_DELIVERED",
+                      "short_desc": "ORDER DELIVERED"
+                    },
+                    "updated_at": "2025-05-15T18:28:31.096Z"
+                  },
+                  "customer": {
+                    "contact": {
+                      "email": "s@x.com",
+                      "phone": "123456789"
+                    },
+                    "person": {
+                      "name": "Saksham"
+                    }
+                  },
+                  "stops": [
+                    {
+                      "type": "start"
+                    }
+                  ],
+                  "agent": {
+                    "person": {
+                      "name": " "
+                    }
+                  },
+                  "rating": "null",
+                  "rateable": true
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "BASE PRICE",
+                    "price": {
+                      "currency": "USD",
+                      "value": "150"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "25"
+                    },
+                    "item": {
+                      "id": "469"
+                    }
+                  }
+                ]
+              },
+              "status": "ACTIVE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
