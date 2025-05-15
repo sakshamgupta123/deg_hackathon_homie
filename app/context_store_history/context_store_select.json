@@ -1,8 +1,8 @@
 {
   "connection_details": {
     "connection_type": null,
-    "provider_id": "27",
-    "item_id": "33",
+    "provider_id": "334",
+    "item_id": "471",
     "selection_id": null,
     "transaction_id": null
   },
@@ -18,10 +18,10 @@
       "context": {
         "ttl": "PT10M",
         "action": "search",
-        "timestamp": "2025-05-15T12:29:42.515Z",
-        "message_id": "2736ef0b-622e-40e6-a654-182425417f92",
-        "transaction_id": "53b9891b-f43f-4c45-9d75-db88946cda24",
-        "domain": "deg:retail",
+        "timestamp": "2025-05-15T14:00:28.256Z",
+        "message_id": "9aa8b714-faa3-4413-aad1-b630f2a07470",
+        "transaction_id": "aedd6639-76a0-4309-8264-d4fe5fd33c08",
+        "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
         "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
@@ -39,7 +39,7 @@
       "responses": [
         {
           "context": {
-            "domain": "deg:retail",
+            "domain": "deg:service",
             "action": "on_search",
             "version": "1.1.0",
             "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
@@ -56,10 +56,10 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "53b9891b-f43f-4c45-9d75-db88946cda24",
-            "message_id": "2736ef0b-622e-40e6-a654-182425417f92",
+            "transaction_id": "aedd6639-76a0-4309-8264-d4fe5fd33c08",
+            "message_id": "9aa8b714-faa3-4413-aad1-b630f2a07470",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T12:29:43.071Z"
+            "timestamp": "2025-05-15T14:00:28.793Z"
           },
           "message": {
             "catalog": {
@@ -70,177 +70,198 @@
               },
               "providers": [
                 {
-                  "id": "27",
+                  "id": "334",
                   "descriptor": {
-                    "name": "Bluebird Solar Panel",
-                    "short_desc": "Bluebird Solar Panel",
-                    "long_desc": "Bluebird Solar Panel",
+                    "name": "San Francisco Electric Authority",
+                    "short_desc": "Official provider for new electricity connections",
+                    "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
                     "additional_desc": {
-                      "url": "www.becknprotocol.io"
+                      "url": "sf_electric_authority"
                     },
                     "images": [
                       {
-                        "url": "https://unified-strapi-dev.becknprotocol.io/uploads/Blue_Bird_cd719cd74e.svg",
+                        "url": "https://sfea.gov/logo.png",
                         "size_type": "sm"
                       }
                     ]
                   },
-                  "categories": [
-                    {
-                      "id": "16",
-                      "descriptor": {
-                        "name": "SOLAR ENERGY",
-                        "code": "SOLAR_ENERGY"
-                      }
-                    }
-                  ],
-                  "short_desc": "Bluebird Solar Panel",
+                  "short_desc": "Official provider for new electricity connections",
                   "fulfillments": [
                     {
-                      "id": "3",
-                      "type": "Delivery in 5 Days",
-                      "rating": "4.3",
+                      "id": "617",
+                      "type": "SITE_VISIT",
+                      "rateable": true
+                    },
+                    {
+                      "id": "617",
+                      "type": "SITE_VISIT",
                       "rateable": true
                     }
                   ],
                   "locations": [
                     {
-                      "id": "3",
-                      "gps": "28.44877751913814,77.04643194750535",
-                      "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                      "id": "29",
+                      "gps": "37.7504,-122.4138",
+                      "address": "1320 Potrero Ave, SF",
                       "city": {
-                        "name": "Gurugram"
+                        "name": "San Francisco"
                       },
                       "country": {
-                        "name": "India"
+                        "name": "United States"
                       },
                       "state": {
-                        "name": "Haryana"
-                      }
+                        "name": "CA"
+                      },
+                      "area_code": "94110"
                     }
                   ],
                   "rateable": true,
                   "items": [
                     {
-                      "id": "33",
+                      "id": "471",
                       "descriptor": {
-                        "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
-                        "code": "Solar Panel",
-                        "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
-                        "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                        "name": "Residential Electricity Connection",
+                        "code": "Residential Electricity Connection",
+                        "short_desc": "Residential Electricity Connection",
+                        "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
                         "images": [
                           {
-                            "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621"
-                          },
-                          {
-                            "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626"
-                          },
-                          {
-                            "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632"
-                          },
-                          {
-                            "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624"
-                          },
-                          {
-                            "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628"
-                          },
-                          {
-                            "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630"
+                            "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png"
                           }
                         ]
                       },
                       "rateable": true,
-                      "rating": "4.5",
+                      "rating": "null",
                       "price": {
-                        "value": "187500",
-                        "currency": "INR"
-                      },
-                      "quantity": {
-                        "available": {
-                          "count": 1000
-                        }
-                      },
-                      "fulfillment_ids": [
-                        "3"
-                      ],
-                      "location_ids": [
-                        "3"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "id": "106",
-                  "descriptor": {
-                    "name": "Voltronix",
-                    "short_desc": "Battery",
-                    "long_desc": "Battery",
-                    "additional_desc": {
-                      "url": "https://voltronix.com/"
-                    },
-                    "images": [
-                      {
-                        "url": "https://voltronix.com/wp-content/uploads/2021/08/New-Voltonix_logo_byline_Blue25AAE1_White-bkg.png",
-                        "size_type": "sm"
-                      }
-                    ]
-                  },
-                  "categories": [
-                    {
-                      "id": "17",
-                      "descriptor": {
-                        "name": "DEG_RETAIL_1",
-                        "code": "DEG_RETAIL_1"
-                      }
-                    }
-                  ],
-                  "rating": "4",
-                  "short_desc": "Battery",
-                  "fulfillments": [
-                    {
-                      "id": "3",
-                      "type": "Delivery in 5 Days",
-                      "rating": "4.3",
-                      "rateable": true
-                    }
-                  ],
-                  "rateable": true,
-                  "items": [
-                    {
-                      "id": "284",
-                      "descriptor": {
-                        "name": "Voltronix Lithium Ion Battery Kit for Energy Storage, Solar and Battery up",
-                        "code": "Battery",
-                        "short_desc": "Voltronix Lithium Ion Battery Kit for Energy Storage, Solar and Battery up",
-                        "long_desc": "3,000 - 5,000 cycles versus 300 - 500 with lead acid which means a much longer run life and less battery replacements during time of ownership.\nUp to 60% less weight (lead acid 688 lbs vs. 200-320 for lithium batteries depending on size configuration selected).\nEliminate adding water to batteries, minimal corrosion of terminals and frame.\nLess wear and tear on electrical components equates to a more favorable discharge curve and more consistent run time.",
-                        "images": [
-                          {
-                            "url": "https://m.media-amazon.com/images/I/81wzNbAfgzL._AC_SX679_.jpg"
-                          }
-                        ]
-                      },
-                      "rateable": true,
-                      "rating": "5",
-                      "price": {
-                        "value": "25000",
+                        "value": "80",
                         "currency": "USD"
                       },
                       "quantity": {
                         "available": {
-                          "count": 100
+                          "count": 20
                         }
                       },
+                      "category_ids": [
+                        "44"
+                      ],
                       "fulfillment_ids": [
-                        "3"
+                        "617"
+                      ],
+                      "location_ids": [
+                        "29"
                       ],
                       "tags": [
                         {
+                          "descriptor": {
+                            "description": "connection-type",
+                            "code": "connection-type"
+                          },
                           "list": [
                             {
-                              "value": "50",
+                              "value": "Resendial",
                               "descriptor": {
-                                "code": "Battery Capacity",
-                                "name": "Battery Capacity"
+                                "code": "property-type",
+                                "name": "property-type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "documentation",
+                            "code": "documentation"
+                          },
+                          "list": [
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            },
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "472",
+                      "descriptor": {
+                        "name": "Commercial Electricity Connection",
+                        "code": "Commercial Electricity Connection",
+                        "short_desc": "Commercial Electricity Connection",
+                        "long_desc": "Commercial Electricity Connection",
+                        "images": [
+                          {
+                            "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "null",
+                      "price": {
+                        "value": "200",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 20
+                        }
+                      },
+                      "category_ids": [
+                        "44"
+                      ],
+                      "fulfillment_ids": [
+                        "617"
+                      ],
+                      "location_ids": [
+                        "29"
+                      ],
+                      "tags": [
+                        {
+                          "descriptor": {
+                            "description": "connection-type",
+                            "code": "connection-type"
+                          },
+                          "list": [
+                            {
+                              "value": "Commercial",
+                              "descriptor": {
+                                "code": "property-type",
+                                "name": "property-type"
+                              },
+                              "display": true
+                            }
+                          ]
+                        },
+                        {
+                          "descriptor": {
+                            "description": "documentation",
+                            "code": "documentation"
+                          },
+                          "list": [
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
+                              },
+                              "display": true
+                            },
+                            {
+                              "value": "Three Phase",
+                              "descriptor": {
+                                "code": "phase",
+                                "name": "phase"
                               },
                               "display": true
                             }
@@ -260,10 +281,10 @@
       "context": {
         "ttl": "PT10M",
         "action": "select",
-        "timestamp": "2025-05-15T12:30:03.512Z",
-        "message_id": "c7964437-d7be-4252-bfb9-ac14d9626ef6",
-        "transaction_id": "57e2cbf7-4e3c-4385-8388-c6ed9b9859ef",
-        "domain": "deg:retail",
+        "timestamp": "2025-05-15T14:00:38.613Z",
+        "message_id": "75086d23-4112-40ab-beb4-d191b4afa027",
+        "transaction_id": "23b7ee7a-481c-449d-895f-0e1ff1c999e2",
+        "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
         "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
@@ -281,7 +302,7 @@
       "responses": [
         {
           "context": {
-            "domain": "deg:retail",
+            "domain": "deg:service",
             "action": "on_select",
             "version": "1.1.0",
             "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
@@ -298,81 +319,55 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "57e2cbf7-4e3c-4385-8388-c6ed9b9859ef",
-            "message_id": "c7964437-d7be-4252-bfb9-ac14d9626ef6",
+            "transaction_id": "23b7ee7a-481c-449d-895f-0e1ff1c999e2",
+            "message_id": "75086d23-4112-40ab-beb4-d191b4afa027",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T12:30:04.043Z"
+            "timestamp": "2025-05-15T14:00:39.128Z"
           },
           "message": {
             "order": {
               "provider": {
-                "id": "27",
+                "id": "334",
                 "descriptor": {
-                  "name": "Bluebird Solar Panel",
-                  "short_desc": "Bluebird Solar Panel",
-                  "long_desc": "Bluebird Solar Panel",
+                  "name": "San Francisco Electric Authority",
+                  "short_desc": "Official provider for new electricity connections",
+                  "long_desc": "Government utility responsible for delivering new residential and commercial electricity connections in San Francisco.",
+                  "additional_desc": {
+                    "url": "sf_electric_authority"
+                  },
                   "images": [
                     {
-                      "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
-                      "size_type": "sm"
-                    },
-                    {
-                      "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
-                      "size_type": "sm"
-                    },
-                    {
-                      "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
-                      "size_type": "sm"
-                    },
-                    {
-                      "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
-                      "size_type": "sm"
-                    },
-                    {
-                      "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
-                      "size_type": "sm"
-                    },
-                    {
-                      "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                      "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
                       "size_type": "sm"
                     }
                   ]
                 },
-                "categories": [
-                  {
-                    "id": "16",
-                    "descriptor": {
-                      "name": "SOLAR ENERGY"
-                    }
-                  }
-                ],
                 "locations": [
                   {
-                    "id": "3",
-                    "gps": "28.44877751913814,77.04643194750535",
-                    "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                    "id": "29",
+                    "gps": "37.7504,-122.4138",
+                    "address": "1320 Potrero Ave, SF",
                     "city": {
-                      "name": "Gurugram"
+                      "name": "San Francisco"
                     },
                     "country": {
-                      "name": "India"
+                      "name": "United States"
                     },
                     "state": {
-                      "name": "Haryana"
-                    }
+                      "name": "CA"
+                    },
+                    "area_code": "94110"
                   }
                 ],
                 "fulfillments": [
                   {
-                    "id": "3",
-                    "type": "Delivery in 5 Days",
-                    "rating": "4.3",
+                    "id": "617",
+                    "type": "SITE_VISIT",
                     "rateable": true
                   },
                   {
-                    "id": "3",
-                    "type": "Delivery in 5 Days",
-                    "rating": "4.3",
+                    "id": "617",
+                    "type": "SITE_VISIT",
                     "rateable": true
                   }
                 ],
@@ -380,61 +375,86 @@
               },
               "items": [
                 {
-                  "id": "33",
+                  "id": "471",
                   "descriptor": {
-                    "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
-                    "code": "Solar Panel",
-                    "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
-                    "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                    "name": "Residential Electricity Connection",
+                    "code": "Residential Electricity Connection",
+                    "short_desc": "Residential Electricity Connection",
+                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
                     "images": [
                       {
-                        "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
-                        "size_type": "sm"
-                      },
-                      {
-                        "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
-                        "size_type": "sm"
-                      },
-                      {
-                        "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
-                        "size_type": "sm"
-                      },
-                      {
-                        "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
-                        "size_type": "sm"
-                      },
-                      {
-                        "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
-                        "size_type": "sm"
-                      },
-                      {
-                        "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                        "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
                         "size_type": "sm"
                       }
                     ]
                   },
-                  "rating": "4.5",
+                  "rating": "null",
                   "rateable": true,
                   "location_ids": [
-                    "3"
+                    "29"
                   ],
                   "price": {
-                    "value": "187500",
-                    "currency": "INR"
+                    "value": "80",
+                    "currency": "USD"
                   },
                   "quantity": {
                     "available": {
-                      "count": 1000,
+                      "count": 20,
                       "measure": {
-                        "value": "1000"
+                        "value": "20"
                       }
                     },
                     "selected": {
                       "count": 1
                     }
                   },
+                  "category_ids": [
+                    "44"
+                  ],
                   "fulfillment_ids": [
-                    "3"
+                    "617"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "description": "connection-type",
+                        "code": "connection-type"
+                      },
+                      "list": [
+                        {
+                          "value": "Resendial",
+                          "descriptor": {
+                            "code": "property-type",
+                            "name": "property-type"
+                          },
+                          "display": true
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "description": "documentation",
+                        "code": "documentation"
+                      },
+                      "list": [
+                        {
+                          "value": "Three Phase",
+                          "descriptor": {
+                            "code": "phase",
+                            "name": "phase"
+                          },
+                          "display": true
+                        },
+                        {
+                          "value": "Three Phase",
+                          "descriptor": {
+                            "code": "phase",
+                            "name": "phase"
+                          },
+                          "display": true
+                        }
+                      ]
+                    }
                   ],
                   "xinput": {
                     "form": {
@@ -445,45 +465,36 @@
               ],
               "quote": {
                 "price": {
-                  "value": "187500",
-                  "currency": "INR"
+                  "value": "80",
+                  "currency": "USD"
                 },
                 "breakup": [
                   {
-                    "title": "Item Price",
+                    "title": "BASE PRICE",
                     "price": {
                       "currency": "USD",
-                      "value": "2000"
+                      "value": "150"
                     },
                     "item": {
-                      "id": "33"
+                      "id": "471"
                     }
                   },
                   {
                     "title": "TAX",
                     "price": {
                       "currency": "USD",
-                      "value": "174"
+                      "value": "25"
                     },
                     "item": {
-                      "id": "33"
+                      "id": "471"
                     }
                   }
                 ]
               },
-              "categories": {
-                "id": "16",
-                "value": "SOLAR ENERGY",
-                "createdAt": "2024-11-27T11:00:56.170Z",
-                "updatedAt": "2024-11-27T11:00:56.170Z",
-                "publishedAt": "2024-11-27T11:00:56.167Z",
-                "category_code": "SOLAR_ENERGY"
-              },
               "fulfillments": [
                 {
-                  "id": "3",
-                  "type": "Delivery in 5 Days",
-                  "rating": "4.3",
+                  "id": "617",
+                  "type": "SITE_VISIT",
                   "rateable": true
                 }
               ]

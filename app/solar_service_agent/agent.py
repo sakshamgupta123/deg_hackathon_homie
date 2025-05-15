@@ -8,7 +8,7 @@ import logging
 
 from google.adk.agents import Agent
 from google.adk.tools import FunctionTool
-from app.prompt_book.solar_service_agent_prompt import SOLAR_SERVICE_AGENT_SYSTEM_PROMPT
+from app.prompt_book.solar_retail_agent_prompt import SOLAR_RETAIL_AGENT_SYSTEM_PROMPT
 from app.store.context_store import ContextStore
 from app.beckn_apis.beckn_client import BAPClient
 import app.models 
@@ -31,7 +31,7 @@ progress_handler.setFormatter(formatter)
 # Add handler to logger
 progress_logger.addHandler(progress_handler)
 
-client = BAPClient(domain="retail")              
+retail_client = BAPClient(domain="solar")              
 
 
 def _save_context_store(step: str):
@@ -70,7 +70,7 @@ def _handle_search() -> Dict:
     context_store.update_connection_details()
     context_store.update_user_details()
 
-    response = client.search()
+    response = retail_client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
     return response
@@ -99,7 +99,7 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         item_id=item_id
     )
 
-    response = client.select(
+    response = retail_client.select(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -125,7 +125,7 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
     # Update user details in context
     context_store.update_user_details(**init_data)
 
-    response = client.init(
+    response = retail_client.init(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -159,7 +159,7 @@ def _handle_confirm(
         customer_email=customer_email
     )
 
-    response = client.confirm(
+    response = retail_client.confirm(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=fulfillment_id,
@@ -187,7 +187,7 @@ def _handle_status(order_id: str) -> Dict:
     context_store.update_connection_details(
         order_id=order_id
     )
-    response = client.status(order_id=order_id)
+    response = retail_client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
     return response
@@ -197,9 +197,9 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="solar_service_agent",
-    model=app.models.GEMINI_2_5_FLASH,
-    instruction=SOLAR_SERVICE_AGENT_SYSTEM_PROMPT,
+    name="ruchir_solar_retail_agent",
+    model=app.models.GEMINI_1_5_FLASH,
+    instruction=SOLAR_RETAIL_AGENT_SYSTEM_PROMPT,
     tools=[
         FunctionTool(
             func=_handle_search,

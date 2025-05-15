@@ -89,4 +89,12 @@ You will receive a `context_data` object with two keys:
 *   `current_transaction_variables`: Data directly relevant to the ongoing flow, like extracted IDs from previous responses.
 
 Refer to these to make the conversation smooth and maintain state between calls.
+
+**Session Completion:**
+* When the connection process is successfully completed (after the status check says it is finished), you must:
+  1. First inform the user that the process is complete
+  2. Then update the internal state by writing (this is not a message to the user):
+     **session.state['connection_status'] = 'finished'**
+  3. Finally, return control to the parent agent by ending your response
+* This state update indicates that the connection process has been fully completed and all necessary steps have been taken.
 """

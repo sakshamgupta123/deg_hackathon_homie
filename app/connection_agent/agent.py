@@ -31,7 +31,7 @@ progress_handler.setFormatter(formatter)
 # Add handler to logger
 progress_logger.addHandler(progress_handler)
 
-connection_client = BAPClient(domain="connection")
+client = BAPClient(domain="connection")
 
 
 def _save_context_store(step: str):
@@ -70,7 +70,7 @@ def _handle_search() -> Dict:
     context_store.update_connection_details()
     context_store.update_user_details()
 
-    response = connection_client.search()
+    response = client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
     return response
@@ -99,7 +99,7 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         item_id=item_id
     )
 
-    response = connection_client.select(
+    response = client.select(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -125,7 +125,7 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
     # Update user details in context
     context_store.update_user_details(**init_data)
 
-    response = connection_client.init(
+    response = client.init(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -159,7 +159,7 @@ def _handle_confirm(
         customer_email=customer_email
     )
 
-    response = connection_client.confirm(
+    response = client.confirm(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=fulfillment_id,
@@ -187,7 +187,7 @@ def _handle_status(order_id: str) -> Dict:
     context_store.update_connection_details(
         order_id=order_id
     )
-    response = connection_client.status(order_id=order_id)
+    response = client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
     return response
