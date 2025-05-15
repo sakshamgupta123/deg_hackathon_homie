@@ -19,18 +19,18 @@ All agents run on `gemini-2.5-flash-preview-04-17`.
 
 ### ✨ Key Features
 
-- **Streamlit interface** with live status cards and action logs.  
-- **Clean multi-agent orchestration** — every tool call is logged.  
+- **Streamlit interface** with live status cards and action logs.
+- **Clean multi-agent orchestration** — every tool call is logged.
 - **Real-time feedback** keeps the user informed at each step.
 
 ---
 
 ## 👥 Team
 
-| Name | 
+| Name |
 |------|
 | **Saksham Gupta** |
-| **Ruchir Chheda** | 
+| **Ruchir Chheda** |
 
 ---
 
@@ -61,12 +61,10 @@ pip install -r requirements.txt
 export GOOGLE_API_KEY="YOUR_KEY_HERE"     # Windows: set GOOGLE_API_KEY=YOUR_KEY_HERE
 
 # 5 — Run the app
-streamlit run app.py
+PYTHONPATH=$(pwd) streamlit run app/main.py
 ```
 ## 🎥 Demo Video
-Video file: demo/video.mp4 (also uploaded separately).
-
-(Link coming soon.)
+Video Link - https://www.youtube.com/watch?v=Gri8al6Eq_4
 ## 📚 Challenges & Learnings
 Prompt engineering is everything — agent reliability rose and fell with the clarity of every system prompt.
 
