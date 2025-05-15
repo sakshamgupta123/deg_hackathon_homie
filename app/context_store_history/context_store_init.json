@@ -1,0 +1,760 @@
+{
+  "connection_details": {
+    "connection_type": null,
+    "provider_id": "27",
+    "item_id": "33",
+    "selection_id": null,
+    "transaction_id": null
+  },
+  "user_details": {
+    "name": null,
+    "location": null,
+    "address": null,
+    "phone": null,
+    "email": null,
+    "provider_id": "27",
+    "item_id": "33"
+  },
+  "transaction_history": {
+    "search": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "search",
+        "timestamp": "2025-05-15T12:29:42.515Z",
+        "message_id": "2736ef0b-622e-40e6-a654-182425417f92",
+        "transaction_id": "53b9891b-f43f-4c45-9d75-db88946cda24",
+        "domain": "deg:retail",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:retail",
+            "action": "on_search",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "53b9891b-f43f-4c45-9d75-db88946cda24",
+            "message_id": "2736ef0b-622e-40e6-a654-182425417f92",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T12:29:43.071Z"
+          },
+          "message": {
+            "catalog": {
+              "descriptor": {
+                "name": "UrjaKart",
+                "code": "UrjaKart",
+                "short_desc": "A seller platform for energy solutions, enabling seamless transactions of batteries, solar panels, and other renewable energy products."
+              },
+              "providers": [
+                {
+                  "id": "27",
+                  "descriptor": {
+                    "name": "Bluebird Solar Panel",
+                    "short_desc": "Bluebird Solar Panel",
+                    "long_desc": "Bluebird Solar Panel",
+                    "additional_desc": {
+                      "url": "www.becknprotocol.io"
+                    },
+                    "images": [
+                      {
+                        "url": "https://unified-strapi-dev.becknprotocol.io/uploads/Blue_Bird_cd719cd74e.svg",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "categories": [
+                    {
+                      "id": "16",
+                      "descriptor": {
+                        "name": "SOLAR ENERGY",
+                        "code": "SOLAR_ENERGY"
+                      }
+                    }
+                  ],
+                  "short_desc": "Bluebird Solar Panel",
+                  "fulfillments": [
+                    {
+                      "id": "3",
+                      "type": "Delivery in 5 Days",
+                      "rating": "4.3",
+                      "rateable": true
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "3",
+                      "gps": "28.44877751913814,77.04643194750535",
+                      "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                      "city": {
+                        "name": "Gurugram"
+                      },
+                      "country": {
+                        "name": "India"
+                      },
+                      "state": {
+                        "name": "Haryana"
+                      }
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "33",
+                      "descriptor": {
+                        "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                        "code": "Solar Panel",
+                        "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                        "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                        "images": [
+                          {
+                            "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621"
+                          },
+                          {
+                            "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626"
+                          },
+                          {
+                            "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632"
+                          },
+                          {
+                            "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624"
+                          },
+                          {
+                            "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628"
+                          },
+                          {
+                            "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "4.5",
+                      "price": {
+                        "value": "187500",
+                        "currency": "INR"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 1000
+                        }
+                      },
+                      "fulfillment_ids": [
+                        "3"
+                      ],
+                      "location_ids": [
+                        "3"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "106",
+                  "descriptor": {
+                    "name": "Voltronix",
+                    "short_desc": "Battery",
+                    "long_desc": "Battery",
+                    "additional_desc": {
+                      "url": "https://voltronix.com/"
+                    },
+                    "images": [
+                      {
+                        "url": "https://voltronix.com/wp-content/uploads/2021/08/New-Voltonix_logo_byline_Blue25AAE1_White-bkg.png",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "categories": [
+                    {
+                      "id": "17",
+                      "descriptor": {
+                        "name": "DEG_RETAIL_1",
+                        "code": "DEG_RETAIL_1"
+                      }
+                    }
+                  ],
+                  "rating": "4",
+                  "short_desc": "Battery",
+                  "fulfillments": [
+                    {
+                      "id": "3",
+                      "type": "Delivery in 5 Days",
+                      "rating": "4.3",
+                      "rateable": true
+                    }
+                  ],
+                  "rateable": true,
+                  "items": [
+                    {
+                      "id": "284",
+                      "descriptor": {
+                        "name": "Voltronix Lithium Ion Battery Kit for Energy Storage, Solar and Battery up",
+                        "code": "Battery",
+                        "short_desc": "Voltronix Lithium Ion Battery Kit for Energy Storage, Solar and Battery up",
+                        "long_desc": "3,000 - 5,000 cycles versus 300 - 500 with lead acid which means a much longer run life and less battery replacements during time of ownership.\nUp to 60% less weight (lead acid 688 lbs vs. 200-320 for lithium batteries depending on size configuration selected).\nEliminate adding water to batteries, minimal corrosion of terminals and frame.\nLess wear and tear on electrical components equates to a more favorable discharge curve and more consistent run time.",
+                        "images": [
+                          {
+                            "url": "https://m.media-amazon.com/images/I/81wzNbAfgzL._AC_SX679_.jpg"
+                          }
+                        ]
+                      },
+                      "rateable": true,
+                      "rating": "5",
+                      "price": {
+                        "value": "25000",
+                        "currency": "USD"
+                      },
+                      "quantity": {
+                        "available": {
+                          "count": 100
+                        }
+                      },
+                      "fulfillment_ids": [
+                        "3"
+                      ],
+                      "tags": [
+                        {
+                          "list": [
+                            {
+                              "value": "50",
+                              "descriptor": {
+                                "code": "Battery Capacity",
+                                "name": "Battery Capacity"
+                              },
+                              "display": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "select": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "select",
+        "timestamp": "2025-05-15T12:30:03.512Z",
+        "message_id": "c7964437-d7be-4252-bfb9-ac14d9626ef6",
+        "transaction_id": "57e2cbf7-4e3c-4385-8388-c6ed9b9859ef",
+        "domain": "deg:retail",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:retail",
+            "action": "on_select",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "57e2cbf7-4e3c-4385-8388-c6ed9b9859ef",
+            "message_id": "c7964437-d7be-4252-bfb9-ac14d9626ef6",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T12:30:04.043Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "27",
+                "descriptor": {
+                  "name": "Bluebird Solar Panel",
+                  "short_desc": "Bluebird Solar Panel",
+                  "long_desc": "Bluebird Solar Panel",
+                  "images": [
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "categories": [
+                  {
+                    "id": "16",
+                    "descriptor": {
+                      "name": "SOLAR ENERGY"
+                    }
+                  }
+                ],
+                "locations": [
+                  {
+                    "id": "3",
+                    "gps": "28.44877751913814,77.04643194750535",
+                    "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                    "city": {
+                      "name": "Gurugram"
+                    },
+                    "country": {
+                      "name": "India"
+                    },
+                    "state": {
+                      "name": "Haryana"
+                    }
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  },
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "33",
+                  "descriptor": {
+                    "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "code": "Solar Panel",
+                    "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                    "images": [
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "4.5",
+                  "rateable": true,
+                  "location_ids": [
+                    "3"
+                  ],
+                  "price": {
+                    "value": "187500",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 1000,
+                      "measure": {
+                        "value": "1000"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "fulfillment_ids": [
+                    "3"
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "187500",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "Item Price",
+                    "price": {
+                      "currency": "USD",
+                      "value": "2000"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "174"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  }
+                ]
+              },
+              "categories": {
+                "id": "16",
+                "value": "SOLAR ENERGY",
+                "createdAt": "2024-11-27T11:00:56.170Z",
+                "updatedAt": "2024-11-27T11:00:56.170Z",
+                "publishedAt": "2024-11-27T11:00:56.167Z",
+                "category_code": "SOLAR_ENERGY"
+              },
+              "fulfillments": [
+                {
+                  "id": "3",
+                  "type": "Delivery in 5 Days",
+                  "rating": "4.3",
+                  "rateable": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "init": {
+      "context": {
+        "ttl": "PT10M",
+        "action": "init",
+        "timestamp": "2025-05-15T12:30:07.441Z",
+        "message_id": "603bf589-cb80-4a22-947d-55256492b3ea",
+        "transaction_id": "ecdcdebe-29ca-4c83-b423-10424675ff3f",
+        "domain": "deg:retail",
+        "version": "1.1.0",
+        "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+        "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+        "location": {
+          "country": {
+            "code": "USA"
+          },
+          "city": {
+            "code": "NANP:628"
+          }
+        },
+        "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+        "bpp_uri": "https://bpp-ps-network-deg-team13.becknprotocol.io/"
+      },
+      "responses": [
+        {
+          "context": {
+            "domain": "deg:retail",
+            "action": "on_init",
+            "version": "1.1.0",
+            "bpp_id": "bpp-ps-network-deg-team13.becknprotocol.io",
+            "bpp_uri": "http://bpp-ps-network-deg-team13.becknprotocol.io",
+            "country": "IND",
+            "city": "std:080",
+            "location": {
+              "country": {
+                "code": "USA"
+              },
+              "city": {
+                "code": "NANP:628"
+              }
+            },
+            "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
+            "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
+            "transaction_id": "ecdcdebe-29ca-4c83-b423-10424675ff3f",
+            "message_id": "603bf589-cb80-4a22-947d-55256492b3ea",
+            "ttl": "PT10M",
+            "timestamp": "2025-05-15T12:30:07.930Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "27",
+                "descriptor": {
+                  "name": "Bluebird Solar Panel",
+                  "short_desc": "Bluebird Solar Panel",
+                  "long_desc": "Bluebird Solar Panel",
+                  "images": [
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                      "size_type": "sm"
+                    },
+                    {
+                      "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                      "size_type": "sm"
+                    }
+                  ]
+                },
+                "categories": [
+                  {
+                    "id": "16",
+                    "descriptor": {
+                      "name": "SOLAR ENERGY"
+                    }
+                  }
+                ],
+                "short_desc": "Bluebird Solar Panel",
+                "fulfillments": [
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  },
+                  {
+                    "id": "3",
+                    "type": "Delivery in 5 Days",
+                    "rating": "4.3",
+                    "rateable": true
+                  }
+                ],
+                "locations": [
+                  {
+                    "id": "3",
+                    "gps": "28.44877751913814,77.04643194750535",
+                    "address": "LIVGUARD ENERGY TECHNOLOGIES PRIVATE LIMITED\nPlot No. 221, Phase-I, Udyog Vihar, Gurgaon 122016 Haryana, India\n+91-124-4987 400\n",
+                    "city": {
+                      "name": "Gurugram"
+                    },
+                    "country": {
+                      "name": "India"
+                    },
+                    "state": {
+                      "name": "Haryana"
+                    }
+                  }
+                ],
+                "rateable": true
+              },
+              "items": [
+                {
+                  "id": "33",
+                  "descriptor": {
+                    "name": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "code": "Solar Panel",
+                    "short_desc": "5KW Solar Panel System \u2013 Polycrystalline & Mono PERC",
+                    "long_desc": "<style>\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        border: 2px solid #444;\n        font-family: Arial, sans-serif;\n        font-size: 16px;\n        margin-top: 10px;\n    }\n    td {\n        border: 2px solid #444;\n        padding: 10px;\n        text-align: left;\n    }\n    tr:nth-child(even) {\n        background-color: #f2f2f2;\n    }\n    h2 {\n        color: #333;\n        border-bottom: 2px solid #444;\n        padding-bottom: 10px;\n        font-weight: bold;\n        margin-top: 20px;\n    }\n    p {\n        font-size: 18px;\n        font-weight: normal;\n        margin-bottom: 20px;\n    }\n</style>\n\n<p>A high-efficiency 5KW solar panel system, ideal for 2BHK and 3BHK homes. Available in Polycrystalline and Mono PERC variants, designed for optimal energy generation.</p>\n\n<h2>Product Specification</h2>\n<table>\n    <tr>\n        <td>Panel Type</td>\n        <td><strong>Polycrystalline / Mono PERC</strong></td>\n    </tr>\n    <tr>\n        <td>Nominal Voltage</td>\n        <td><strong>24V</strong></td>\n    </tr>\n    <tr>\n        <td>Cells</td>\n        <td><strong>72 5BB Full Cells</strong></td>\n    </tr>\n    <tr>\n        <td>Number of Panels</td>\n        <td><strong>15 (Polycrystalline) / 13 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Product Weight</td>\n        <td><strong>18.5 Kgs (Polycrystalline) / 20.5 Kgs (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Total Capacity</td>\n        <td><strong>5KW</strong></td>\n    </tr>\n    <tr>\n        <td>Product Dimensions (cm)</td>\n        <td><strong>164 x 99 x 4 (Polycrystalline) / 198.5 x 100 x 4 (Mono PERC)</strong></td>\n    </tr>\n    <tr>\n        <td>Manufacturer\u2019s Warranty</td>\n        <td><strong>10 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Performance Warranty</td>\n        <td><strong>25 Years</strong></td>\n    </tr>\n    <tr>\n        <td>Package Components</td>\n        <td><strong>Solar panels with IP68 rated junction box, cables & MC4 connectors</strong></td>\n    </tr>\n</table>\n",
+                    "images": [
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Mono-PERC-400W--x-13_2174e022-faa1-482c-b9b8-b3eba33ddcc7.jpg?v=1688548621",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Poly-335W-x-15_a8bd27b4-6020-4aad-ab89-c46aa130e84a.jpg?v=1688548626",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/1500x1500_28ff63b5-c462-4f5d-a7db-4018c1db833f.png?v=1688548632",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/Savings_128a2d1c-f614-40ec-b869-5afe833f4123.png?v=1688548624",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/BBS24MF395_4_6d78ef72-b947-4f77-b7c0-4db42b825d47.jpg?v=1688548628",
+                        "size_type": "sm"
+                      },
+                      {
+                        "url": "https://bluebirdsolar.com/cdn/shop/files/KeyFeatures2_2a799733-10d6-4876-8307-58779f69db2f.png?v=1688548630",
+                        "size_type": "sm"
+                      }
+                    ]
+                  },
+                  "rating": "4.5",
+                  "rateable": true,
+                  "price": {
+                    "value": "187500",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": 1000,
+                      "measure": {
+                        "value": "1000"
+                      }
+                    },
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "fulfillment_ids": [
+                    "3"
+                  ],
+                  "location_ids": [
+                    "3"
+                  ],
+                  "xinput": {
+                    "form": {
+                      "mime_type": "text/html"
+                    }
+                  }
+                }
+              ],
+              "quote": {
+                "price": {
+                  "value": "187500",
+                  "currency": "INR"
+                },
+                "breakup": [
+                  {
+                    "title": "Item Price",
+                    "price": {
+                      "currency": "USD",
+                      "value": "2000"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  },
+                  {
+                    "title": "TAX",
+                    "price": {
+                      "currency": "USD",
+                      "value": "174"
+                    },
+                    "item": {
+                      "id": "33"
+                    }
+                  }
+                ]
+              },
+              "categories": [
+                {
+                  "id": "16",
+                  "value": "SOLAR ENERGY",
+                  "createdAt": "2024-11-27T11:00:56.170Z",
+                  "updatedAt": "2024-11-27T11:00:56.170Z",
+                  "publishedAt": "2024-11-27T11:00:56.167Z",
+                  "category_code": "SOLAR_ENERGY"
+                }
+              ],
+              "fulfillments": [
+                {
+                  "id": "3",
+                  "type": "Delivery in 5 Days",
+                  "rating": "4.3",
+                  "rateable": true
+                }
+              ],
+              "payments": [
+                {
+                  "collected_by": "BPP",
+                  "params": {
+                    "price": "187500",
+                    "currency": "INR"
+                  },
+                  "status": "PAID",
+                  "type": "PRE-ORDER"
+                },
+                {
+                  "collected_by": "BPP",
+                  "params": {
+                    "bank_account_name": "SBI",
+                    "bank_account": "1224555666",
+                    "bank_code": "SBIN000001",
+                    "price": "187500",
+                    "currency": "INR"
+                  },
+                  "status": "PAID",
+                  "type": "PRE-ORDER"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
