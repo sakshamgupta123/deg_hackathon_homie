@@ -217,7 +217,7 @@ current_state = None
 
 root_agent = Agent(
     name="ruchir_connection_agent",
-    model=app.models.GEMINI_1_5_FLASH,
+    model=app.models.GEMINI_2_5_FLASH,
     instruction=CONNECTION_AGENT_SYSTEM_PROMPT,
     tools=[
         FunctionTool(
