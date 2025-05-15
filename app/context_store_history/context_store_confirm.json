@@ -2,13 +2,13 @@
   "connection_details": {
     "connection_type": null,
     "provider_id": "334",
-    "item_id": "471",
+    "item_id": "472",
     "selection_id": null,
     "transaction_id": null,
     "fulfillment_id": "617",
     "customer_name": "Saksham",
-    "customer_phone": "(123)456789",
-    "customer_email": "s@ok.com"
+    "customer_phone": "123456789",
+    "customer_email": "s@x.com"
   },
   "user_details": {
     "name": null,
@@ -17,16 +17,16 @@
     "phone": null,
     "email": null,
     "provider_id": "334",
-    "item_id": "471"
+    "item_id": "472"
   },
   "transaction_history": {
     "search": {
       "context": {
         "ttl": "PT10M",
         "action": "search",
-        "timestamp": "2025-05-15T14:00:28.256Z",
-        "message_id": "9aa8b714-faa3-4413-aad1-b630f2a07470",
-        "transaction_id": "aedd6639-76a0-4309-8264-d4fe5fd33c08",
+        "timestamp": "2025-05-15T15:39:43.905Z",
+        "message_id": "2c05effc-a79b-4f0e-b2a3-d9a93c44fa6a",
+        "transaction_id": "e3f62de2-d9ee-4b92-b712-7287b8c600cd",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -62,10 +62,10 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "aedd6639-76a0-4309-8264-d4fe5fd33c08",
-            "message_id": "9aa8b714-faa3-4413-aad1-b630f2a07470",
+            "transaction_id": "e3f62de2-d9ee-4b92-b712-7287b8c600cd",
+            "message_id": "2c05effc-a79b-4f0e-b2a3-d9a93c44fa6a",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T14:00:28.793Z"
+            "timestamp": "2025-05-15T15:39:44.371Z"
           },
           "message": {
             "catalog": {
@@ -287,9 +287,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "select",
-        "timestamp": "2025-05-15T14:00:38.613Z",
-        "message_id": "75086d23-4112-40ab-beb4-d191b4afa027",
-        "transaction_id": "23b7ee7a-481c-449d-895f-0e1ff1c999e2",
+        "timestamp": "2025-05-15T15:44:01.884Z",
+        "message_id": "09eec474-8286-46a4-b46b-f6ddeff50401",
+        "transaction_id": "7ded4c5b-d7d8-476c-890f-56cd60adc933",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -325,10 +325,10 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "23b7ee7a-481c-449d-895f-0e1ff1c999e2",
-            "message_id": "75086d23-4112-40ab-beb4-d191b4afa027",
+            "transaction_id": "7ded4c5b-d7d8-476c-890f-56cd60adc933",
+            "message_id": "09eec474-8286-46a4-b46b-f6ddeff50401",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T14:00:39.128Z"
+            "timestamp": "2025-05-15T15:44:02.457Z"
           },
           "message": {
             "order": {
@@ -381,12 +381,12 @@
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "472",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "Commercial Electricity Connection",
+                    "code": "Commercial Electricity Connection",
+                    "short_desc": "Commercial Electricity Connection",
+                    "long_desc": "Commercial Electricity Connection",
                     "images": [
                       {
                         "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
@@ -400,7 +400,7 @@
                     "29"
                   ],
                   "price": {
-                    "value": "80",
+                    "value": "200",
                     "currency": "USD"
                   },
                   "quantity": {
@@ -428,7 +428,7 @@
                       },
                       "list": [
                         {
-                          "value": "Resendial",
+                          "value": "Commercial",
                           "descriptor": {
                             "code": "property-type",
                             "name": "property-type"
@@ -471,7 +471,7 @@
               ],
               "quote": {
                 "price": {
-                  "value": "80",
+                  "value": "200",
                   "currency": "USD"
                 },
                 "breakup": [
@@ -482,7 +482,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "472"
                     }
                   },
                   {
@@ -492,7 +492,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "472"
                     }
                   }
                 ]
@@ -513,9 +513,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "init",
-        "timestamp": "2025-05-15T14:00:41.168Z",
-        "message_id": "0ad2e1b8-64be-4f62-be8f-afc9079a5cb1",
-        "transaction_id": "88935f43-407d-4569-b789-a0e3c1dc6cae",
+        "timestamp": "2025-05-15T15:44:19.655Z",
+        "message_id": "7bdb9ad9-69ea-4ff6-ad39-102fb7832fd1",
+        "transaction_id": "f93120ad-b672-48e7-92ca-1d1953bde90a",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -551,10 +551,10 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "88935f43-407d-4569-b789-a0e3c1dc6cae",
-            "message_id": "0ad2e1b8-64be-4f62-be8f-afc9079a5cb1",
+            "transaction_id": "f93120ad-b672-48e7-92ca-1d1953bde90a",
+            "message_id": "7bdb9ad9-69ea-4ff6-ad39-102fb7832fd1",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T14:00:41.630Z"
+            "timestamp": "2025-05-15T15:44:20.178Z"
           },
           "message": {
             "order": {
@@ -608,12 +608,12 @@
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "472",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "Commercial Electricity Connection",
+                    "code": "Commercial Electricity Connection",
+                    "short_desc": "Commercial Electricity Connection",
+                    "long_desc": "Commercial Electricity Connection",
                     "images": [
                       {
                         "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
@@ -624,7 +624,7 @@
                   "rating": "null",
                   "rateable": true,
                   "price": {
-                    "value": "80",
+                    "value": "200",
                     "currency": "USD"
                   },
                   "quantity": {
@@ -655,7 +655,7 @@
                       },
                       "list": [
                         {
-                          "value": "Resendial",
+                          "value": "Commercial",
                           "descriptor": {
                             "code": "property-type",
                             "name": "property-type"
@@ -698,7 +698,7 @@
               ],
               "quote": {
                 "price": {
-                  "value": "80",
+                  "value": "200",
                   "currency": "USD"
                 },
                 "breakup": [
@@ -709,7 +709,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "472"
                     }
                   },
                   {
@@ -719,7 +719,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "472"
                     }
                   }
                 ]
@@ -740,9 +740,9 @@
       "context": {
         "ttl": "PT10M",
         "action": "confirm",
-        "timestamp": "2025-05-15T14:01:17.294Z",
-        "message_id": "dcf9e6df-dde8-4292-bbae-25e0b7aadea6",
-        "transaction_id": "bc3b444f-2a45-4dcd-a381-be3a8deec096",
+        "timestamp": "2025-05-15T15:44:22.597Z",
+        "message_id": "7a809fa9-a8e8-4f4e-95a3-ff6645505857",
+        "transaction_id": "ae50848a-f86e-4cce-a7e6-b1be151659a1",
         "domain": "deg:service",
         "version": "1.1.0",
         "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
@@ -778,14 +778,14 @@
             },
             "bap_id": "bap-ps-network-deg-team13.becknprotocol.io",
             "bap_uri": "https://bap-ps-network-deg-team13.becknprotocol.io/",
-            "transaction_id": "bc3b444f-2a45-4dcd-a381-be3a8deec096",
-            "message_id": "dcf9e6df-dde8-4292-bbae-25e0b7aadea6",
+            "transaction_id": "ae50848a-f86e-4cce-a7e6-b1be151659a1",
+            "message_id": "7a809fa9-a8e8-4f4e-95a3-ff6645505857",
             "ttl": "PT10M",
-            "timestamp": "2025-05-15T14:01:17.932Z"
+            "timestamp": "2025-05-15T15:44:23.196Z"
           },
           "message": {
             "order": {
-              "id": "3809",
+              "id": "3812",
               "provider": {
                 "id": "334",
                 "descriptor": {
@@ -842,12 +842,12 @@
               },
               "items": [
                 {
-                  "id": "471",
+                  "id": "472",
                   "descriptor": {
-                    "name": "Residential Electricity Connection",
-                    "code": "Residential Electricity Connection",
-                    "short_desc": "Residential Electricity Connection",
-                    "long_desc": "This residential electricity connection is ideal for homes, apartments, and other living spaces. It ensures a steady power supply suitable for running everyday appliances like lights, fans, TVs, refrigerators, washing machines, and other domestic devices. The connection is limited to moderate load levels and complies with local safety and energy efficiency standards. Perfect for first-time homeowners or tenants seeking reliable electricity.",
+                    "name": "Commercial Electricity Connection",
+                    "code": "Commercial Electricity Connection",
+                    "short_desc": "Commercial Electricity Connection",
+                    "long_desc": "Commercial Electricity Connection",
                     "images": [
                       {
                         "url": "https://cdn0.iconfinder.com/data/icons/cables-plugs/154/socket-electricity-cable-connect-plug-512.png",
@@ -858,7 +858,7 @@
                   "rating": "null",
                   "rateable": true,
                   "price": {
-                    "value": "80",
+                    "value": "200",
                     "currency": "USD"
                   },
                   "quantity": {
@@ -896,7 +896,7 @@
                             "description": "property-type",
                             "code": "property-type"
                           },
-                          "value": "Resendial",
+                          "value": "Commercial",
                           "display": true
                         }
                       ]
@@ -949,7 +949,7 @@
                       "value": "150"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "472"
                     }
                   },
                   {
@@ -959,7 +959,7 @@
                       "value": "25"
                     },
                     "item": {
-                      "id": "471"
+                      "id": "472"
                     }
                   }
                 ]
@@ -973,7 +973,7 @@
                       "code": "ORDER_RECEIVED",
                       "short_desc": "ORDER RECEIVED"
                     },
-                    "updated_at": "2025-05-15T14:01:17.793Z"
+                    "updated_at": "2025-05-15T15:44:23.099Z"
                   }
                 }
               ]

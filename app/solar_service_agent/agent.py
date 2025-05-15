@@ -31,7 +31,7 @@ progress_handler.setFormatter(formatter)
 # Add handler to logger
 progress_logger.addHandler(progress_handler)
 
-retail_client = BAPClient(domain="solar")              
+client = BAPClient(domain="solar")              
 
 
 def _save_context_store(step: str):
@@ -58,19 +58,16 @@ def _save_context_store(step: str):
 
 def _handle_search() -> Dict:
     """
-    Search for electricity connection providers
-
-    Args:
-        location: Location to search in
-        connection_type: Type of connection (Residential/Commercial)
+    Search for available solar installation services and qualified installers.
+    No parameters required as search is performed with default configurations.
     """
-    progress_logger.info("Step 1/5: Search")
+    progress_logger.info("[SOLAR_SERVICE]:Step 1/5: Search")
 
     # Update context with search parameters
     context_store.update_connection_details()
     context_store.update_user_details()
 
-    response = retail_client.search()
+    response = client.search()
     context_store.add_transaction_history('search', response)
     _save_context_store('search')
     return response
@@ -78,14 +75,13 @@ def _handle_search() -> Dict:
 
 def _handle_select(provider_id: str, item_id: str) -> Dict:
     """
-    Select a specific provider and plan
+    Select a specific solar installation service from a provider.
 
     Args:
-        provider_id: ID of the selected provider
-        item_id: ID of the selected plan
-        connection_type: Optional connection type (will use from context if not provided)
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected installation service
     """
-    progress_logger.info("Step 2/5: Select")
+    progress_logger.info("[SOLAR_SERVICE]:Step 2/5: Select")
 
     if not context_store.get_transaction_history().get('search'):
         raise Exception('Search must be performed before selection')
@@ -99,7 +95,7 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
         item_id=item_id
     )
 
-    response = retail_client.select(
+    response = client.select(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -110,9 +106,13 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
 
 def _handle_init(provider_id: str, item_id: str) -> Dict:
     """
-    Initialize connection request with customer details
+    Initialize the solar installation service scheduling process.
+
+    Args:
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected installation service
     """
-    progress_logger.info("Step 3/5: Initialize")
+    progress_logger.info("[SOLAR_SERVICE]:Step 3/5: Initialize")
 
     if not context_store.get_transaction_history().get('select'):
         raise Exception('Selection must be made before initialization')
@@ -125,7 +125,7 @@ def _handle_init(provider_id: str, item_id: str) -> Dict:
     # Update user details in context
     context_store.update_user_details(**init_data)
 
-    response = retail_client.init(
+    response = client.init(
         provider_id=provider_id,
         item_id=item_id
     )
@@ -143,9 +143,17 @@ def _handle_confirm(
     customer_email: str
 ) -> Dict:
     """
-    Confirm connection request with payment details
+    Confirm the solar installation service with customer and installation details.
+
+    Args:
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected installation service
+        fulfillment_id (str): ID of the fulfillment from init response
+        customer_name (str): Full name of the person scheduling the installation
+        customer_phone (str): Primary contact phone number
+        customer_email (str): Customer's email address
     """
-    progress_logger.info("Step 4/5: Confirm")
+    progress_logger.info("[SOLAR_SERVICE]:Step 4/5: Confirm")
 
     if not context_store.get_transaction_history().get('init'):
         raise Exception('Initialization must be done before confirmation')
@@ -159,7 +167,7 @@ def _handle_confirm(
         customer_email=customer_email
     )
 
-    response = retail_client.confirm(
+    response = client.confirm(
         provider_id=provider_id,
         item_id=item_id,
         fulfillment_id=fulfillment_id,
@@ -174,12 +182,12 @@ def _handle_confirm(
 
 def _handle_status(order_id: str) -> Dict:
     """
-    Check status of a connection request
+    Check the status of a solar installation service.
 
     Args:
-        transaction_id: Optional transaction ID (will use from context if not provided)
+        order_id (str): The order ID obtained from init response
     """
-    progress_logger.info("Step 5/5: Status Check")
+    progress_logger.info("[SOLAR_SERVICE]:Step 5/5: Status Check")
 
     if not context_store.get_transaction_history().get('confirm'):
         raise Exception('Confirmation must be done before status check')
@@ -187,7 +195,7 @@ def _handle_status(order_id: str) -> Dict:
     context_store.update_connection_details(
         order_id=order_id
     )
-    response = retail_client.status(order_id=order_id)
+    response = client.status(order_id=order_id)
     context_store.add_transaction_history('status', response)
     _save_context_store('status')
     return response

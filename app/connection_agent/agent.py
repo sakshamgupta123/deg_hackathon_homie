@@ -58,13 +58,10 @@ def _save_context_store(step: str):
 
 def _handle_search() -> Dict:
     """
-    Search for electricity connection providers
-
-    Args:
-        location: Location to search in
-        connection_type: Type of connection (Residential/Commercial)
+    Search for electricity connection providers in the user's area.
+    No parameters required as search is performed with default configurations.
     """
-    progress_logger.info("Step 1/5: Search")
+    progress_logger.info("[CONNECTION]:Step 1/5: Search")
 
     # Update context with search parameters
     context_store.update_connection_details()
@@ -78,14 +75,13 @@ def _handle_search() -> Dict:
 
 def _handle_select(provider_id: str, item_id: str) -> Dict:
     """
-    Select a specific provider and plan
+    Select a specific electricity connection provider and plan.
 
     Args:
-        provider_id: ID of the selected provider
-        item_id: ID of the selected plan
-        connection_type: Optional connection type (will use from context if not provided)
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected connection plan
     """
-    progress_logger.info("Step 2/5: Select")
+    progress_logger.info("[CONNECTION]:Step 2/5: Select")
 
     if not context_store.get_transaction_history().get('search'):
         raise Exception('Search must be performed before selection')
@@ -110,9 +106,13 @@ def _handle_select(provider_id: str, item_id: str) -> Dict:
 
 def _handle_init(provider_id: str, item_id: str) -> Dict:
     """
-    Initialize connection request with customer details
+    Initialize the electricity connection request.
+
+    Args:
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected connection plan
     """
-    progress_logger.info("Step 3/5: Initialize")
+    progress_logger.info("[CONNECTION]:Step 3/5: Initialize")
 
     if not context_store.get_transaction_history().get('select'):
         raise Exception('Selection must be made before initialization')
@@ -143,9 +143,17 @@ def _handle_confirm(
     customer_email: str
 ) -> Dict:
     """
-    Confirm connection request with payment details
+    Confirm the electricity connection request with customer details.
+
+    Args:
+        provider_id (str): ID of the selected provider
+        item_id (str): ID of the selected connection plan
+        fulfillment_id (str): ID of the fulfillment from init response
+        customer_name (str): Full name of the person applying for connection
+        customer_phone (str): Primary contact phone number
+        customer_email (str): Customer's email address
     """
-    progress_logger.info("Step 4/5: Confirm")
+    progress_logger.info("[CONNECTION]:Step 4/5: Confirm")
 
     if not context_store.get_transaction_history().get('init'):
         raise Exception('Initialization must be done before confirmation')
@@ -174,12 +182,12 @@ def _handle_confirm(
 
 def _handle_status(order_id: str) -> Dict:
     """
-    Check status of a connection request
+    Check the status of an electricity connection request.
 
     Args:
-        transaction_id: Optional transaction ID (will use from context if not provided)
+        order_id (str): The order ID obtained from init response
     """
-    progress_logger.info("Step 5/5: Status Check")
+    progress_logger.info("[CONNECTION]:Step 5/5: Status Check")
 
     if not context_store.get_transaction_history().get('confirm'):
         raise Exception('Confirmation must be done before status check')

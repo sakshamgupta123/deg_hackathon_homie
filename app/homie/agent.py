@@ -40,5 +40,5 @@ root_agent = Agent(
     name="homie",
     model=app.models.GEMINI_1_5_FLASH,
     instruction=HOMIE_AGENT_SYSTEM_PROMPT,
-    sub_agents=[solar_service_agent, solar_retail_agent, connection_agent]
+    sub_agents=[solar_service_agent, solar_retail_agent, connection_agent],
 )

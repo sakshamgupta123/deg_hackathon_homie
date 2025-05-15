@@ -90,11 +90,17 @@ You will receive a `context_data` object with two keys:
 
 Refer to these to make the conversation smooth and maintain state between calls.
 
+**Shared State and Context Management:**
+* The `session.state` and `session.events` are shared across all agents in the workflow
+* Before asking for any information, check if it's already available in:
+  * `session.state` - for persistent data like user details
+  * `session.events` - for conversation history and previous interactions
+* Never ask for information that has already been provided in previous interactions
+* If you need information that might be in another agent's context, check the shared state first
+* When you collect new information, store it in the appropriate state variable for other agents to use
+
 **Session Completion:**
-* When the connection process is successfully completed (after the status check says it is finished), you must:
+* When the purchase process is successfully completed (after confirmation and status check), you must:
   1. First inform the user that the process is complete
-  2. Then update the internal state by writing (this is not a message to the user):
-     **session.state['connection_status'] = 'finished'**
-  3. Finally, return control to the parent agent by ending your response
-* This state update indicates that the connection process has been fully completed and all necessary steps have been taken.
-"""
+  2. Finally, return control to the parent agent - "HOMIE" by ending your response
+""" 
