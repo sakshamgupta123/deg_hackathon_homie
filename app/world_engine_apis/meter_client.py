@@ -194,7 +194,7 @@ if __name__ == "__main__":
     
     # Create a new meter
     create_response = client.create_meter(
-        code="METER202",
+        code="METER208",
         energy_resource="2105"
     )
     print("Created meter:", create_response)

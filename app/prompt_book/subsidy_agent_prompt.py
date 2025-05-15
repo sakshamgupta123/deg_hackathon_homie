@@ -71,10 +71,8 @@ You will receive a `context_data` object with two keys:
 Refer to these to make informed decisions about subsidy applications.
 
 **Session Completion:**
-* When the subsidy application process is successfully completed (after the status check says it is finished), you must:
-  1. First inform the user that the process is complete
-  2. Then update the internal state by writing (this is not a message to the user):
-     **session.state['subsidy_status'] = 'finished'**
-  3. Finally, return control to the parent agent "HOMIE" by ending your response
-* This state update indicates that the subsidy application process has been fully completed and all necessary steps have been taken.
+* When the purchase process is successfully completed, you must:
+  1. Check the order status using _handle_status until it shows "ORDER DELIVERED"
+  2. Inform the user that the process is complete and the solar products have been delivered
+  3. Only after confirming "ORDER DELIVERED" status, return control to the parent agent - "HOMIE" by ending your response
 """

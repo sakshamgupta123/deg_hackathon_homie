@@ -8,6 +8,7 @@ import logging
 import shutil
 
 from google.adk.agents import Agent
+from google.adk.tools import FunctionTool
 from app.solar_service_agent.agent import root_agent as solar_service_agent
 from app.solar_retail_agent.agent import root_agent as solar_retail_agent
 from app.connection_agent.agent import root_agent as connection_agent
@@ -47,15 +48,29 @@ progress_logger.addHandler(progress_handler)
 client = BAPClient(domain="retail")              
 
 def _create_meter_energy_resource():
+    """
+    Creates a new meter and associated energy resource.
+    
+    Creates a smart meter with default parameters using the MeterClient, then creates
+    a consumer energy resource linked to that meter using the EnergyResourceClient.
+
+    Returns
+    -------
+    tuple
+        A tuple containing:
+        - meter_id (int): ID of the created meter
+        - energy_resource_id (int): ID of the created energy resource
+    """
+    
     meter_client = MeterClient()
     meter = meter_client.create_meter(
-        code="METER202",
-        energy_resource="2105"
+        code="METER306",
+        energy_resource="2230"
     )
     meter_id = meter['data']['id']
     energy_resource_client = EnergyResourceClient()
     energy_resource = energy_resource_client.create_energy_resource(
-        name="Saksham's Home2",
+        name="Saksham's Home",
         type="CONSUMER",
         meter_id=meter_id
     )
@@ -66,5 +81,10 @@ root_agent = Agent(
     model=app.models.GEMINI_2_5_FLASH,
     instruction=HOMIE_AGENT_SYSTEM_PROMPT,
     sub_agents=[solar_service_agent, solar_retail_agent, connection_agent, subsidy_agent],
+    tools = [
+        FunctionTool(
+            func=_create_meter_energy_resource,
+        ),
+    ],
 )
     
