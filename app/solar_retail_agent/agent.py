@@ -49,7 +49,7 @@ def _handle_search() -> Dict:
     """
     Search for available solar products and services.
     No parameters required as search is performed with default configurations.
-    
+
     Returns:
         Dict: Response containing available solar products and services
     """
@@ -251,7 +251,8 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="solar_retail_agent",
+    name="soretail",
+    description="A friendly and knowledgeable solar retail assistant. Your goal is to help users explore and purchase solar products and services, guiding them through the process smoothly while gathering all necessary information.",
     model=app.models.GEMINI_2_5_FLASH,
     instruction=SOLAR_RETAIL_AGENT_SYSTEM_PROMPT,
     tools=[

@@ -1,7 +1,11 @@
 import streamlit as st
+from app.utils.logging_config import get_logger
+
+logger = get_logger("Progress Stepper")
 
 
 def display_progress_stepper(current_step_index: int, steps: list):
+    logger.info(f"Displaying progress stepper with current_step_index: {current_step_index} and steps: {steps}")
     """
     Displays a 5-step progress bar.
     current_step_index: 0-indexed integer for the current active step.

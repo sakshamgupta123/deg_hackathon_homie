@@ -48,7 +48,7 @@ def _handle_search() -> Dict:
     """
     Search for available subsidies based on the user's context.
     Uses information from previous stages to find applicable subsidies.
-    
+
     Returns:
         Dict: Response containing available subsidies matching the user's context
     """
@@ -166,7 +166,8 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="subsidy_agent",
+    name="subsidy",
+    description="A friendly and efficient assistant for finding and applying relevant subsidies for solar installations. Your goal is to find and apply the best available subsidies based on the user's situation, without asking for additional information.",
     model=GEMINI_2_5_FLASH,
     instruction=SUBSIDY_AGENT_SYSTEM_PROMPT,
     tools=[

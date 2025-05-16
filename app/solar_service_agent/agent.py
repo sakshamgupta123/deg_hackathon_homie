@@ -49,7 +49,7 @@ def _handle_search() -> Dict:
     """
     Search for available solar installation services.
     No parameters required as search is performed with default configurations.
-    
+
     Returns:
         Dict: Response containing available solar installation services
     """
@@ -251,7 +251,8 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="solar_service_agent",
+    name="soservice",
+    description="A friendly and knowledgeable solar installation service assistant. Your goal is to help users find and schedule solar panel installation services, matching them with qualified installers based on their specific solar panel requirements and location.",
     model=app.models.GEMINI_2_5_FLASH,
     instruction=SOLAR_SERVICE_AGENT_SYSTEM_PROMPT,
     tools=[

@@ -49,7 +49,7 @@ def _handle_search() -> Dict:
     """
     Search for electricity connection providers.
     No parameters required as search is performed with default configurations.
-    
+
     Returns:
         Dict: Response containing available connection providers and their plans
     """
@@ -251,7 +251,8 @@ context_store = ContextStore()
 current_state = None
 
 root_agent = Agent(
-    name="ruchir_connection_agent",
+    name="connie",
+    description="A friendly and efficient assistant for setting up new electricity connections. Your goal is to guide users through the process smoothly and gather all necessary information.",
     model=app.models.GEMINI_2_5_FLASH,
     instruction=CONNECTION_AGENT_SYSTEM_PROMPT,
     tools=[
